@@ -1,0 +1,19 @@
+Config {
+         font = "xft:DejaVu Sans-8",
+         bgColor = "white",
+         fgColor = "black",
+         position = TopW L 97,
+         commands = [ 
+          Run Date "%a %d %b - %k:%M" "date" 600,
+          Run StdinReader,
+	  Run Com "quotas.py" [] "quotas" 600,
+	  Run BatteryP ["BAT0"] 
+                  [
+                   "-t", "<left>%",
+                   "--", "-c", "energy_full"
+                  ] 10
+	 ],
+         sepChar = "%",
+         alignSep = "}{",
+         template = "%StdinReader% }{ <fc=#d00>%quotas%</fc> <fc=#a00>%battery%</fc> <fc=#ee9a00>%date%</fc>"
+       }
