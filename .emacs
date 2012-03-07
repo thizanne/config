@@ -17,12 +17,12 @@
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 (setq linum-format
       (lambda (line)
-	(propertize (format
-		     (let ((w (length (number-to-string
-				       (count-lines (point-min) (point-max))))))
-		       (concat "%" (number-to-string w) "d "))
-		     line)
-		    'face 'linum)))
+        (propertize (format
+                     (let ((w (length (number-to-string
+                                       (count-lines (point-min) (point-max))))))
+                       (concat "%" (number-to-string w) "d "))
+                     line)
+                    'face 'linum)))
 
 
 (menu-bar-mode -1)
@@ -32,12 +32,24 @@
 
 (require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
-(setq org-agenda-files (list "~/org/divers.org"
-			     "~/org/scouts.org"
-			     ))
+(setq org-export-latex-listings t)
+(require 'org-latex)
+(setq org-latex-to-pdf-process
+      '("xelatex -interaction nonstopmode %f"
+        "xelatex -interaction nonstopmode %f")) ;; for multiple passes
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}
+                \\input{/home/thibault/latex/tpl.tex}
+                [NO-DEFAULT-PACKAGES]
+                [NO-PACKAGES]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+               ))
 
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
@@ -52,31 +64,32 @@
 
 (require 'mediawiki)
 (add-hook 'mediawiki-mode-hook
-	  '(lambda ()
-	     (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
-	     ))
+          '(lambda ()
+             (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
+             ))
 
-(setq mediawiki-site-alist 
-      (quote 
+(setq mediawiki-site-alist
+      (quote
        (
-	("wiki.rez" "http://wiki.rez/" "Suze" "" "Accueil") 
-	("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
-	)))
+        ("wiki.rez" "http://wiki.rez/" "Suze" "" "Accueil")
+        ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
+        )))
 
 
 (add-to-list 'auto-mode-alist '("\\.ml[iylp]?$" . tuareg-mode))
 (add-to-list 'auto-mode-alist '("\\.ocamlinit$" . tuareg-mode))
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
-(add-hook 'tuareg-mode-hook 
-	  '(lambda ()
-	     (setq tuareg-sym-lock-keywords nil)
-	     (setq standard-indent 2)
-	     )
-	  )
+(add-hook 'tuareg-mode-hook
+          '(lambda ()
+             (setq tuareg-sym-lock-keywords nil)
+             (setq standard-indent 2)
+             )
+          )
 
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
+;;(setq TeX-engine 'xelatex)
 (setq TeX-PDF-mode t)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
@@ -114,7 +127,7 @@
      )))
 
 (defface tuareg-font-lock-governing-face
-  '((((background light)) 
+  '((((background light))
      (:foreground "#0066eb" :bold nil))
     (t (:foreground "#0066eb" :bold nil)))
   "Face description for governing/leading keywords."
@@ -197,4 +210,3 @@
 ;;(autoload 'pov-mode "pov-mode" "POV-Ray mode." t)
 ;;(add-to-list 'auto-mode-alist '("\\.pov\\'" . pov-mode))
 ;;(add-to-list 'auto-mode-alist '("\\.inc\\'" . pov-mode))
-
