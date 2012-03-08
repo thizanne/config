@@ -78,6 +78,12 @@ function mdir () {
     mkdir $1
     cd $1
 }
+
+function cds() {
+    cd $1
+    ls
+}
+
 alias ls='ls -FLh'
 alias l='/bin/ls'
 alias l1='ls -F1'
