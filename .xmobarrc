@@ -6,7 +6,7 @@ Config {
          commands = [ 
           Run Date "%a %d %b - %k:%M" "date" 600,
           Run StdinReader,
-	  Run Com "quotas.py" [] "quotas" 600,
+	  Run Com "/home/thibault/bin/quotas.py" [] "quotas" 600,
 	  Run BatteryP ["BAT0"] 
                   [
                    "-t", "<left>%",
