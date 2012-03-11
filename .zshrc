@@ -93,8 +93,7 @@ alias lla='ls -Fhla'
 
 alias cd..='cd ..'
 alias df='df -h'
-alias free='free -m'
-alias s="sudo"
+alias s="sudo -E"
 alias ss="sudo -sE"
 
 alias halt="sudo halt"
