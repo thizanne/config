@@ -99,7 +99,7 @@ alias ss="sudo -sE"
 alias halt="sudo halt"
 alias reboot="sudo reboot"
 
-alias alsa="alsamixer"
+alias am="alsamixer"
 alias ocaml="rlwrap ocaml"
 alias python="python -q"
 alias yoplait="yaourt -Syyua --devel"
