@@ -98,6 +98,7 @@ alias ss="sudo -sE"
 
 alias halt="sudo halt"
 alias reboot="sudo reboot"
+alias dhcpcd="sudo dhcpcd"
 
 alias am="alsamixer"
 alias ocaml="rlwrap ocaml"
@@ -119,7 +120,7 @@ alias ssht1="ssh suze@10.13.0.251" # taimatsu1
 alias ssht2="ssh suze@10.13.0.252" # taimatsu2
 alias ssht3="ssh suze@10.13.0.243" # taimatsu3
 alias sshv="ssh suze@10.7.0.243"   # vidar
-alias sshw="ssh suze@10.7.0.246"   # www
+alias sshw="ssh suze@10.13.0.246"   # www
 
 alias ssht="ssh thibault@178.170.103.6"
 alias sshg="ssh suzanne_thi@gamin.metz.supelec.fr"
