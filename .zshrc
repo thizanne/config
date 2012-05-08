@@ -1,7 +1,7 @@
 # Configuration zsh de Thibault Suzanne
 TERM=rxvt-unicode-256color
 #TERM=rxvt-unicode
-PATH=${HOME}/bin:$PATH
+PATH=${HOME}/bin:${HOME}/.cabal/bin:$PATH
 
 # Historique
 HISTFILE=~/.histfile
