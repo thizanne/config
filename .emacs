@@ -89,6 +89,9 @@
         )))
 
 
+(autoload 'graphviz-dot-mode "graphviz-dot-mode.el" "graphviz dot mode." t)
+(add-to-list 'auto-mode-alist '("\\.dot" . graphviz-dot-mode))
+
 (add-to-list 'auto-mode-alist '("\\.ml[iylp]?$" . tuareg-mode))
 (add-to-list 'auto-mode-alist '("\\.ocamlinit$" . tuareg-mode))
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
