@@ -67,6 +67,8 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
+(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+
 (require 'pkgbuild-mode)
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
 
