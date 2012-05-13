@@ -69,6 +69,9 @@
 
 (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/cc-mode/")
+(setq c-default-style "k&r" c-basic-offset 4)
+
 (require 'pkgbuild-mode)
 (setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
 
