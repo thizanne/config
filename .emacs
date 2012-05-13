@@ -148,7 +148,7 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 ;;Finally, if you often use \include or \input, you should make AUCTeX aware of the multi-file document structure. You can do this by inserting :
-(setq-default TeX-master nil)
+;;(setq-default TeX-master nil)
 
 (add-to-list 'auto-mode-alist '("\\.erl" . erlang-mode))
 (setq erlang-root-dir "/usr/lib/erlang")
