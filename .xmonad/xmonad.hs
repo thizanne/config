@@ -1,6 +1,8 @@
 import Data.Monoid
 import System.Exit
 import XMonad
+import XMonad.Actions.SpawnOn
+import XMonad.Layout.PerWorkspace
 import XMonad.Config.Azerty
 import XMonad.Hooks.DynamicLog
 import XMonad.Layout.NoBorders
@@ -9,17 +11,17 @@ import XMonad.Prompt.Shell
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
-myTerminal      = "urxvtc"
+myTerminal = "urxvtc"
 myModMask = mod4Mask
- 
+
 myWorkspaces = with_greek ["Trivia","Web","Mail","Chat"]
-    where with_greek li = li ++ take (9 - length li) alphabeta 
+    where with_greek li = li ++ take (9 - length li) alphabeta
               where alphabeta =
                         ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι"]
 
 myNormalBorderColor  = "#777777"
 myFocusedBorderColor = "white"
- 
+
 shconf = defaultXPConfig {
            borderColor = "#333333",
            bgColor     = "#ffffff",
@@ -27,8 +29,8 @@ shconf = defaultXPConfig {
            fgColor     = "#333333"
 }
 
-myKeys conf@(XConfig {XMonad.modMask = modm}) = 
-    M.fromList $ [ 
+myKeys conf@(XConfig {XMonad.modMask = modm}) =
+    M.fromList $ [
           ((modm .|. shiftMask, xK_Return   ), spawn $ XMonad.terminal conf),
           ((modm,               xK_p        ), shellPrompt shconf),
           ((modm .|. shiftMask, xK_c        ), kill),
@@ -55,7 +57,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           (i, k) <- zip (XMonad.workspaces conf) [0x26,0xe9,0x22,0x27,0x28,0x2d,0xe8,0x5f,0xe7,0xe0],
           (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
-myMouseBindings (XConfig {XMonad.modMask = modm}) = 
+myMouseBindings (XConfig {XMonad.modMask = modm}) =
     M.fromList $ [
           ((modm, button1), (\w -> focus w >> mouseMoveWindow w
                                    >> windows W.shiftMaster)),
@@ -63,24 +65,29 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) =
           ((modm, button3), (\w -> focus w >> mouseResizeWindow w
                                    >> windows W.shiftMaster))
          ]
- 
-myLayout = tiled ||| Mirror tiled ||| noBorders Full
+
+myLayout = onWorkspace "Chat" (Mirror tiled ||| tiled ||| noBorders Full) $
+           tiled ||| Mirror tiled ||| noBorders Full
   where
     tiled   = Tall nmaster delta ratio
     nmaster = 1
     ratio   = 1 / 2
     delta   = 3 / 100
- 
 
-myManageHook = composeAll [ 
-                className =? "Skype"       --> doFloat,
-                className =? "Gimp"        --> doFloat
-               ] 
- 
-myStartupHook = ()
- 
+
+myManageHook = composeAll $
+               [className =? c --> doFloat | c <- myFloats]
+               ++
+               [
+                className =? "Firefox"     --> doF (W.shift "Web"),
+                className =? "Thunderbird" --> doF (W.shift "Mail"),
+                className =? "Skype"       --> doF (W.shift "Chat")
+               ]
+    where myFloats = ["Skype", "Gimp"]
+
+
 main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
- 
+
 myConfig = azertyConfig {
         terminal           = "urxvtc",
         modMask            = myModMask,
@@ -90,11 +97,10 @@ myConfig = azertyConfig {
         keys               = myKeys,
         mouseBindings      = myMouseBindings,
         layoutHook         = myLayout,
-        manageHook         = myManageHook,
-        startupHook        = myStartupHook
+        manageHook         = myManageHook
            }
 
-myPP = xmobarPP { 
+myPP = xmobarPP {
          ppHidden  = xmobarColor "#444444" "",
          ppCurrent = xmobarColor "#aaaaaa" "",
          ppTitle   = xmobarColor "#dd0000" "",
