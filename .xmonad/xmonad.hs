@@ -31,7 +31,7 @@ shconf = defaultXPConfig {
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
     M.fromList $ [
-          ((modm .|. shiftMask, xK_Return   ), spawn $ XMonad.terminal conf),
+          ((modm,               xK_Return   ), spawn $ XMonad.terminal conf),
           ((modm,               xK_p        ), shellPrompt shconf),
           ((modm .|. shiftMask, xK_c        ), kill),
           ((modm,               xK_space    ), sendMessage NextLayout),
@@ -41,7 +41,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           ((modm,               xK_j        ), windows W.focusDown),
           ((modm,               xK_k        ), windows W.focusUp),
           ((modm,               xK_m        ), windows W.focusMaster),
-          ((modm,               xK_Return   ), windows W.swapMaster),
+          ((modm .|. shiftMask, xK_Return   ), windows W.swapMaster),
           ((modm .|. shiftMask, xK_j        ), windows W.swapDown),
           ((modm .|. shiftMask, xK_k        ), windows W.swapUp),
           ((modm,               xK_h        ), sendMessage Shrink),
