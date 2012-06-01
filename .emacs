@@ -24,6 +24,7 @@
                      line)
                     'face 'linum)))
 
+(setq fill-nobreak-predicate '(fill-french-nobreak-p))
 
 (menu-bar-mode -1)
 (column-number-mode 1)
