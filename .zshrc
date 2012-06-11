@@ -125,7 +125,7 @@ alias sshw="ssh suze@10.13.0.246"   # www
 alias ssht="ssh thibault@178.170.103.6"
 alias sshg="ssh suzanne_thi@gamin.metz.supelec.fr"
 alias sshs="ssh suze@sahara.rez"
-alias sshk="ssh suze@k6lqsh.rez"
+alias sshk="ssh suze@10.69.1.250"
 alias sshm="ssh premieremetz@tonbnc.fr"
 
 
