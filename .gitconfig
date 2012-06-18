@@ -1,0 +1,13 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	name = Thibault Suzanne
+	email = thi.suzanne@gmail.com
+[alias]
+        st = status
+        df = diff
+        co = checkout
+        ci = commit
+        br = branch
