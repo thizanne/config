@@ -13,6 +13,8 @@
 (prefer-coding-system 'utf-8)
 
 (global-set-key (kbd "C-c C-c RET") (kbd "C-RET"))
+(global-set-key (kbd "C-v") 'scroll-up-line)
+(global-set-key (kbd "M-v") 'scroll-down-line)
 ;; Numéros de lignes alignés à droite, avec un espace entre le numéro et le texte
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 (setq linum-format
