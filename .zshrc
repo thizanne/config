@@ -101,6 +101,7 @@ alias reboot="sudo reboot"
 alias dhcpcd="sudo dhcpcd"
 
 alias am="alsamixer"
+alias caml="rlwrap ocaml -init /dev/null" # bare toplevel
 alias ocaml="rlwrap ocaml"
 alias python="python -q"
 alias yoplait="yaourt -Syyua --devel"
