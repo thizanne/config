@@ -93,6 +93,7 @@ alias lla='ls -Fhla'
 
 alias cd..='cd ..'
 alias df='df -h'
+alias ggrep='grep 2>/dev/null'
 alias s="sudo -E"
 alias ss="sudo -sE"
 
