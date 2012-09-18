@@ -38,7 +38,7 @@ setopt chase_links
 # Quand l'utilisateur commence sa commande par '!' pour faire de la
 # completion historique, il n'execute pas la commande immediatement
 # mais il ecrit la commande dans le prompt
-setopt hist_verify
+# setopt hist_verify
 # Ignorer les doublons dans l'historique
 setopt hist_ignore_all_dups
 # Si la commande est invalide mais correspond au nom d'un sous-répertoire
@@ -103,13 +103,15 @@ alias dhcpcd="sudo dhcpcd"
 
 alias am="alsamixer"
 alias caml="rlwrap ocaml -init /dev/null" # bare toplevel
-alias ocaml="rlwrap ocaml"
-alias python="python -q"
-alias yoplait="yaourt -Syyua --devel"
 alias emacs="emacsibolt"
 alias emacsudo="EDITOR=emacsibolt visudo"
-alias vba="VisualBoyAdvance"
+alias ocaml="rlwrap ocaml"
 alias plow="plow -m"
+alias python="python -q"
+alias vba="VisualBoyAdvance"
+alias yoplait="yaourt -Syyua --devel"
+
+alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
 # ssh sur les serveurs de la rez
 alias ssha="ssh suze@10.13.0.250"  # almighty
