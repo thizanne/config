@@ -50,7 +50,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           ((modm              , xK_comma    ), sendMessage $ IncMasterN 1),
           ((modm              , xK_semicolon), sendMessage $ IncMasterN (-1)),
           ((modm .|. shiftMask, xK_q        ), io (exitWith ExitSuccess)),
-          ((modm              , xK_q        ), spawn "xmonad --recompile; xmonad --restart")
+          ((modm              , xK_q        ), spawn "xmonad --recompile; xmonad --restart"),
+          ((modm              , xK_Right    ), spawn "mpc next"),
+          ((modm              , xK_Left     ), spawn "mpc prev"),
+          ((modm              , xK_Up       ), spawn "mpc play"),
+          ((modm              , xK_Down     ), spawn "mpc pause")
          ]
          ++
          [((m .|. modm, k), windows $ f i) |
