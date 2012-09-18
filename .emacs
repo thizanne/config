@@ -70,7 +70,7 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
-(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+;;(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/cc-mode/")
 (setq c-default-style "k&r" c-basic-offset 4)
@@ -149,6 +149,7 @@
 
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
+(add-to-list 'auto-mode-alist '("\\.hva" . tex-mode))
 ;;(setq TeX-engine 'xelatex)
 (setq TeX-PDF-mode t)
 (setq TeX-auto-save t)
