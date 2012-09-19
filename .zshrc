@@ -111,25 +111,9 @@ alias python="python -q"
 alias vba="VisualBoyAdvance"
 alias yoplait="yaourt -Syyua --devel"
 
-alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
-
-# ssh sur les serveurs de la rez
-alias ssha="ssh suze@10.13.0.250"  # almighty
-alias sshb="ssh suze@10.7.0.254"   # babel
-alias sshe="ssh suze@10.7.0.248"   # era
-alias sshl="ssh suze@10.7.0.244"   # loki
-alias ssho="ssh suze@10.7.0.242"   # okami
-alias sshp="ssh suze@10.7.0.249"   # paiji
-alias ssht1="ssh suze@10.13.0.251" # taimatsu1
-alias ssht2="ssh suze@10.13.0.252" # taimatsu2
-alias ssht3="ssh suze@10.13.0.243" # taimatsu3
-alias sshv="ssh suze@10.7.0.243"   # vidar
-alias sshw="ssh suze@10.13.0.246"   # www
+alias ssh="eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh"
 
 alias ssht="ssh thibault@178.170.103.6"
-alias sshg="ssh suzanne_thi@gamin.metz.supelec.fr"
-alias sshs="ssh suze@sahara.rez"
-alias sshk="ssh suze@10.69.1.250"
 alias sshm="ssh premieremetz@tonbnc.fr"
 
 
