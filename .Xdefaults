@@ -11,3 +11,4 @@ URxvt.perl-ext-common : default,url-select
 URxvt.keysym.Mod4-u : perl:url-select:select_next
 URxvt.urlLauncher : firefox
 URxvt.underlineURLs : true
+Xcursor.theme: Vanilla-DMZ
