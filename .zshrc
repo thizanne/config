@@ -11,7 +11,7 @@ setopt hist_ignore_space
 setopt appendhistory
 
 export GDK_USE_XFT=0
-export EDITOR="emacsibolt"
+export EDITOR='emacsibolt'
 
 # Raccourcis clavier
 bindkey -e
@@ -94,27 +94,27 @@ alias lla='ls -Fhla'
 alias cd..='cd ..'
 alias df='df -h'
 alias ggrep='grep 2>/dev/null'
-alias s="sudo -E"
-alias ss="sudo -sE"
+alias s='sudo -E'
+alias ss='sudo -sE'
 
-alias halt="sudo halt"
-alias reboot="sudo reboot"
-alias dhcpcd="sudo dhcpcd"
+alias halt='sudo halt'
+alias reboot='sudo reboot'
+alias dhcpcd='sudo dhcpcd'
 
-alias am="alsamixer"
-alias caml="rlwrap ocaml -init /dev/null" # bare toplevel
-alias emacs="emacsibolt"
-alias emacsudo="EDITOR=emacsibolt visudo"
-alias ocaml="rlwrap ocaml"
-alias plow="plow -m"
-alias python="python -q"
-alias vba="VisualBoyAdvance"
-alias yoplait="yaourt -Syyua --devel"
+alias am='alsamixer'
+alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
+alias emacs='emacsibolt'
+alias emacsudo='EDITOR=emacsibolt visudo'
+alias ocaml='rlwrap ocaml'
+alias plow='plow -m'
+alias python='python -q'
+alias vba='VisualBoyAdvance'
+alias yoplait='yaourt -Syyua --devel'
 
-alias ssh="eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh"
+alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
-alias ssht="ssh thibault@178.170.103.6"
-alias sshm="ssh premieremetz@tonbnc.fr"
+alias ssht='ssh thibault@178.170.103.6'
+alias sshm='ssh premieremetz@tonbnc.fr'
 
 
 
