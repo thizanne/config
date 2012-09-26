@@ -2,6 +2,7 @@
 URxvt.background : black
 URxvt.foreground : white
 URxvt.font : xft:Deja Vu Sans Mono:size=9:antialias=true:pixelsize=12
+URxvt.letterSpace : -1
 URxvt.scrollBar : false
 URxvt.transparent : true
 URxvt.shading : 20 ! transparent : 100; opaque : 0
