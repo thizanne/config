@@ -6,6 +6,7 @@
 (setq require-final-newline 'query)
 (setq standard-indent 4)
 (setq set-mark-command-repeat-pop t)
+(setq vc-follow-symlinks t)
 
 (set-language-environment "UTF-8")
 (setq locale-coding-system 'utf-8)
