@@ -95,7 +95,7 @@
 (setq mediawiki-site-alist
       (quote
        (
-        ("wiki.rez" "http://wiki.rez/" "Suze" "" "Accueil")
+        ("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
         ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
         )))
 
