@@ -107,7 +107,6 @@ alias emacs='emacsibolt'
 alias emacsudo='EDITOR=emacsibolt visudo'
 alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
-alias python='python -q'
 alias vba='VisualBoyAdvance'
 alias yoplait='yaourt -Syyua --devel'
 
