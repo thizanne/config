@@ -153,7 +153,7 @@
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
 (add-to-list 'auto-mode-alist '("\\.hva" . tex-mode))
-;;(setq TeX-engine 'xelatex)
+(setq TeX-engine 'xetex)
 (setq TeX-PDF-mode t)
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
