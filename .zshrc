@@ -12,6 +12,7 @@ setopt appendhistory
 
 export GDK_USE_XFT=0
 export EDITOR='emacsibolt'
+export BROWSER='firefox'
 
 # Raccourcis clavier
 bindkey -e
