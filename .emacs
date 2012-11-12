@@ -52,23 +52,50 @@
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
 (setq org-log-done t)
-(setq org-export-latex-listings t)
+(setq org-export-latex-listings 'minted)
 (require 'org-latex)
+
 (setq org-latex-to-pdf-process
-      '("xelatex -interaction nonstopmode %f"
-        "xelatex -interaction nonstopmode %f")) ;; for multiple passes
+      '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")
+      )
 (add-to-list 'org-export-latex-classes
              '("article"
                "\\documentclass{article}
-                \\input{/home/thibault/latex/tpl.tex}
-                [NO-DEFAULT-PACKAGES]
-                [NO-PACKAGES]"
+    \\input{/home/thibault/latex/tpl.tex}
+    [NO-DEFAULT-PACKAGES]
+    [NO-PACKAGES]"
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                ))
+(add-to-list 'org-export-latex-classes
+             '("koma-article"
+               "\\documentclass{scrartcl}
+   \\input{/home/thibault/latex/tpl.tex}
+   [NO-DEFAULT-PACKAGES]
+   [NO-PACKAGES]"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+               )
+             )
+
+
+(add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+(defun org-mode-reftex-setup ()
+  (load-library "reftex")
+  (and (buffer-file-name)
+       (file-exists-p (buffer-file-name))
+       (reftex-parse-all))
+  (define-key org-mode-map (kbd "C-c )") 'reftex-citation)
+  )
+(add-hook 'org-mode-hook 'org-mode-reftex-setup)
+
 
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
@@ -158,7 +185,7 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
 ;;Finally, if you often use \include or \input, you should make AUCTeX aware of the multi-file document structure. You can do this by inserting :
-;;(setq-default TeX-master nil)
+(setq-default TeX-master nil)
 
 (add-to-list 'auto-mode-alist '("\\.erl" . erlang-mode))
 (setq erlang-root-dir "/usr/lib/erlang")
