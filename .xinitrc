@@ -15,4 +15,4 @@ trayer --edge top --align right --SetDockType true --alpha 0 \
 feh --bg-center ~/.xmonad/wallpaper.jpg &
 xmodmap ~/.xmodmap &
 
-exec ck-launch-session dbus-launch xmonad
+exec xmonad

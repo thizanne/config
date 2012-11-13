@@ -98,8 +98,8 @@ alias ggrep='grep 2>/dev/null'
 alias s='sudo -E'
 alias ss='sudo -sE'
 
-alias halt='sudo halt'
-alias reboot='sudo reboot'
+alias halt='systemctl poweroff'
+alias reboot='systemctl reboot'
 alias dhcpcd='sudo dhcpcd'
 
 alias am='alsamixer'
