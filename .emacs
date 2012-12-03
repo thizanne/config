@@ -52,7 +52,13 @@
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
 (setq org-log-done t)
+
 (setq org-export-latex-listings 'minted)
+(setq org-export-latex-minted-options
+      '(("frame" "none")
+        ("fontsize" "\\small")
+        ("linenos" "true")))
+
 (require 'org-latex)
 
 (setq org-latex-to-pdf-process
@@ -61,21 +67,22 @@
 (add-to-list 'org-export-latex-classes
              '("article"
                "\\documentclass{article}
-    \\input{/home/thibault/latex/tpl.tex}
-    [NO-DEFAULT-PACKAGES]
-    [NO-PACKAGES]"
+               \\input{/home/thibault/latex/tpl.tex}
+               [NO-DEFAULT-PACKAGES]
+               [NO-PACKAGES]"
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
                ("\\paragraph{%s}" . "\\paragraph*{%s}")
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                ))
+
 (add-to-list 'org-export-latex-classes
              '("koma-article"
                "\\documentclass{scrartcl}
-   \\input{/home/thibault/latex/tpl.tex}
-   [NO-DEFAULT-PACKAGES]
-   [NO-PACKAGES]"
+                \\input{/home/thibault/latex/tpl.tex}
+                [NO-DEFAULT-PACKAGES]
+                [NO-PACKAGES]"
                ("\\section{%s}" . "\\section*{%s}")
                ("\\subsection{%s}" . "\\subsection*{%s}")
                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
@@ -83,8 +90,6 @@
                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
                )
              )
-
-
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 (defun org-mode-reftex-setup ()
