@@ -105,7 +105,7 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
 
-;;(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/cc-mode/")
 (setq c-default-style "k&r" c-basic-offset 4)
