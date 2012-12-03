@@ -113,7 +113,7 @@ alias yoplait='yaourt -Syyua --devel'
 
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
-alias ssht='ssh thibault@178.170.103.6'
+alias ssht='su -c "ssh thibault@178.170.103.6 -D 80"'
 alias sshm='ssh premieremetz@tonbnc.fr'
 
 
