@@ -48,7 +48,6 @@
   (define-key map (kbd "C-c") 'zlc-reset)
   )
 
-(require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
 (setq org-log-done t)
@@ -57,7 +56,9 @@
 (setq org-export-latex-minted-options
       '(("frame" "none")
         ("fontsize" "\\small")
-        ("linenos" "true")))
+        ("linenos" "true")
+        ("mathescape" "true")
+        ))
 
 (require 'org-latex)
 
