@@ -54,7 +54,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           ((modm              , xK_Right    ), spawn "mpc next"),
           ((modm              , xK_Left     ), spawn "mpc prev"),
           ((modm              , xK_Up       ), spawn "mpc play"),
-          ((modm              , xK_Down     ), spawn "mpc pause")
+          ((modm              , xK_Down     ), spawn "mpc pause"),
+          ((modm              , xK_s        ), spawn "slock")
          ]
          ++
          [((m .|. modm, k), windows $ f i) |
