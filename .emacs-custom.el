@@ -7,6 +7,7 @@
  '(org-emphasis-regexp-components (quote ("     ('\"{" "-       .,:!?;'\")}\\" "," "." 1)))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
+ '(proof-electric-terminator-enable t)
  '(proof-find-and-forget-fn (quote coq-find-and-forget))
  '(proof-find-theorems-command "Search %s. ")
  '(proof-goal-command "Goal %s. ")
@@ -62,7 +63,9 @@
  '(proof-tree-get-proof-info (quote coq-proof-tree-get-proof-info))
  '(proof-tree-ignored-commands-regexp "^\\(\\(Show\\)\\|\\(Locate\\)\\|\\(Theorem\\)\\|\\(Lemma\\)\\|\\(Remark\\)\\|\\(Fact\\)\\|\\(Corollary\\)\\|\\(Proposition\\)\\|\\(Definition\\)\\|\\(Let\\)\\|\\(Fixpoint\\)\\|\\(CoFixpoint\\)\\)")
  '(proof-tree-navigation-command-regexp "^\\(Focus\\)\\|\\(Unfocus\\)")
- '(proof-tree-show-sequent-command (quote coq-show-sequent-command)))
+ '(proof-tree-show-sequent-command (quote coq-show-sequent-command))
+ '(typerex-font-lock-symbols t)
+ '(typerex-library-path "/usr/lib/ocaml"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
