@@ -37,6 +37,7 @@
 (global-set-key (kbd "M-i") 'previous-multiframe-window)
 
 (require 'zlc)
+(zlc-mode t)
 (let ((map minibuffer-local-map))
   ;;; like menu select
   (define-key map (kbd "<down>")  'zlc-select-next-vertical)
@@ -48,6 +49,7 @@
   (define-key map (kbd "C-c") 'zlc-reset)
   )
 
+(require 'org-install)
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
 (setq org-log-done t)
@@ -60,37 +62,49 @@
         ("mathescape" "true")
         ))
 
-(require 'org-latex)
+(require 'ox-latex)
 
-(setq org-latex-to-pdf-process
+(setq org-latex-pdf-process
       '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")
       )
-(add-to-list 'org-export-latex-classes
+(add-to-list 'org-latex-classes
              '("article"
-               "\\documentclass{article}
-               \\input{/home/thibault/latex/tpl.tex}
+               "\\documentclass\{article\}
+               \\input\{/home/thibault/latex/tpl.tex\}
                [NO-DEFAULT-PACKAGES]
                [NO-PACKAGES]"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
                ))
 
-(add-to-list 'org-export-latex-classes
+(add-to-list 'org-latex-classes
              '("koma-article"
-               "\\documentclass{scrartcl}
-                \\input{/home/thibault/latex/tpl.tex}
+               "\\documentclass\{scrartcl\}
+                \\input\{/home/thibault/latex/tpl.tex\}
+                \[NO-DEFAULT-PACKAGES\]
+                \[NO-PACKAGES\]"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+               ))
+
+(add-to-list 'org-latex-classes
+             '("beamer"
+               "\\documentclass\[presentation\]\{beamer\}
+                \\input\{/home/thibault/latex/tpl_beamer.tex\}
                 [NO-DEFAULT-PACKAGES]
                 [NO-PACKAGES]"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-               )
-             )
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ))
+(setq org-beamer-frame-level 3)
+(setq org-beamer-theme "Frankfurt")
+
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
 (defun org-mode-reftex-setup ()
