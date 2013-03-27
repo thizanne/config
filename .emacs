@@ -3,7 +3,7 @@
 
 (setq font-lock-maximum-decoration t)
 (setq whitespace-line-column 79)
-(setq require-final-newline 'query)
+(setq require-final-newline t)
 (setq standard-indent 4)
 (setq set-mark-command-repeat-pop t)
 (setq vc-follow-symlinks t)
