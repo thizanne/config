@@ -54,8 +54,8 @@
 (add-to-list 'auto-mode-alist '("\\.txt$" . org-mode))
 (setq org-log-done t)
 
-(setq org-export-latex-listings 'minted)
-(setq org-export-latex-minted-options
+(setq org-latex-listings 'minted)
+(setq org-latex-minted-options
       '(("frame" "none")
         ("fontsize" "\\small")
         ("linenos" "true")
@@ -95,7 +95,7 @@
 
 (add-to-list 'org-latex-classes
              '("beamer"
-               "\\documentclass\[presentation\]\{beamer\}
+               "\\documentclass\[presentation,svgnames\]\{beamer\}
                 \\input\{/home/thibault/latex/tpl_beamer.tex\}
                 [NO-DEFAULT-PACKAGES]
                 [NO-PACKAGES]"
@@ -103,7 +103,7 @@
                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
                ))
 (setq org-beamer-frame-level 3)
-(setq org-beamer-theme "Frankfurt")
+(setq org-beamer-theme "Darmstadt")
 
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
