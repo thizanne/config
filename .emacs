@@ -120,7 +120,8 @@
 
 
 (autoload 'python-mode "python-mode.el" "Python mode." t)
-(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
+(add-to-list auto-mode-alist '("/*.\.py$" . python-mode))
+(setq 'py-shell-name "python3")
 
 (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
@@ -132,7 +133,6 @@
 
 (load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-(add-hook 'haskell-mode-hook 'font-lock-mode)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 
 (require 'mediawiki)
