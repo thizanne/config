@@ -13,6 +13,8 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
 (global-set-key (kbd "C-c C-c RET") (kbd "C-RET"))
 (global-set-key (kbd "C-v") 'scroll-up-line)
 (global-set-key (kbd "M-v") 'scroll-down-line)
