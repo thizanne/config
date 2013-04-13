@@ -24,12 +24,12 @@
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 (setq linum-format
       (lambda (line)
-        (propertize (format
-                     (let ((w (length (number-to-string
-                                       (count-lines (point-min) (point-max))))))
-                       (concat "%" (number-to-string w) "d "))
-                     line)
-                    'face 'linum)))
+	(propertize (format
+		     (let ((w (length (number-to-string
+				       (count-lines (point-min) (point-max))))))
+		       (concat "%" (number-to-string w) "d "))
+		     line)
+		    'face 'linum)))
 
 (setq fill-nobreak-predicate '(fill-french-nobreak-p))
 
@@ -59,10 +59,10 @@
 (setq org-latex-listings 'minted)
 (setq org-latex-minted-options
       '(("frame" "none")
-        ("fontsize" "\\small")
-        ("linenos" "true")
-        ("mathescape" "true")
-        ))
+	("fontsize" "\\small")
+	("linenos" "true")
+	("mathescape" "true")
+	))
 
 (require 'ox-latex)
 
@@ -70,40 +70,40 @@
       '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")
       )
 (add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass\{article\}
-               \\input\{/home/thibault/latex/tpl.tex\}
-               [NO-DEFAULT-PACKAGES]
-               [NO-PACKAGES]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-               ))
+	     '("article"
+	       "\\documentclass\{article\}
+	       \\input\{/home/thibault/latex/tpl.tex\}
+	       [NO-DEFAULT-PACKAGES]
+	       [NO-PACKAGES]"
+	       ("\\section\{%s\}" . "\\section*\{%s\}")
+	       ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+	       ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+	       ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+	       ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+	       ))
 
 (add-to-list 'org-latex-classes
-             '("koma-article"
-               "\\documentclass\{scrartcl\}
-                \\input\{/home/thibault/latex/tpl.tex\}
-                \[NO-DEFAULT-PACKAGES\]
-                \[NO-PACKAGES\]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-               ))
+	     '("koma-article"
+	       "\\documentclass\{scrartcl\}
+		\\input\{/home/thibault/latex/tpl.tex\}
+		\[NO-DEFAULT-PACKAGES\]
+		\[NO-PACKAGES\]"
+	       ("\\section\{%s\}" . "\\section*\{%s\}")
+	       ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+	       ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+	       ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+	       ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+	       ))
 
 (add-to-list 'org-latex-classes
-             '("beamer"
-               "\\documentclass\[presentation,svgnames\]\{beamer\}
-                \\input\{/home/thibault/latex/tpl_beamer.tex\}
-                [NO-DEFAULT-PACKAGES]
-                [NO-PACKAGES]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ))
+	     '("beamer"
+	       "\\documentclass\[presentation,svgnames\]\{beamer\}
+		\\input\{/home/thibault/latex/tpl_beamer.tex\}
+		[NO-DEFAULT-PACKAGES]
+		[NO-PACKAGES]"
+	       ("\\section\{%s\}" . "\\section*\{%s\}")
+	       ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+	       ))
 (setq org-beamer-frame-level 3)
 (setq org-beamer-theme "Darmstadt")
 
@@ -120,8 +120,8 @@
 
 
 (autoload 'python-mode "python-mode.el" "Python mode." t)
-(add-to-list auto-mode-alist '("/*.\.py$" . python-mode))
-(setq 'py-shell-name "python3")
+(add-to-list 'auto-mode-alist '("\\.py" . python-mode))
+(setq py-shell-name "python3")
 
 (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
@@ -129,7 +129,7 @@
 (setq c-default-style "k&r" c-basic-offset 4)
 
 (require 'pkgbuild-mode)
-(setq auto-mode-alist (append '(("/PKGBUILD$" . pkgbuild-mode)) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("PKGBUILD$" . pkgbuild-mode))
 
 (load "/usr/share/emacs/site-lisp/haskell-mode/haskell-site-file")
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
@@ -137,16 +137,16 @@
 
 (require 'mediawiki)
 (add-hook 'mediawiki-mode-hook
-          '(lambda ()
-             (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
-             ))
+	  '(lambda ()
+	     (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
+	     ))
 
 (setq mediawiki-site-alist
       (quote
        (
-        ("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
-        ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
-        )))
+	("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
+	("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
+	)))
 
 
 (autoload 'graphviz-dot-mode "graphviz-dot-mode.el" "graphviz dot mode." t)
@@ -157,11 +157,11 @@
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 (add-hook 'tuareg-mode-hook
-          '(lambda ()
-             (setq tuareg-sym-lock-keywords nil)
-             (setq standard-indent 2)
-             )
-          )
+	  '(lambda ()
+	     (setq tuareg-sym-lock-keywords nil)
+	     (setq standard-indent 2)
+	     )
+	  )
 
 ;; Loading TypeRex mode for OCaml files
 (add-to-list 'load-path "@lispdir@")
