@@ -68,9 +68,9 @@ RPS1="%(?..%B%{$fg[red]%}%?%b%{$fg[default]%} / )%{$fg[cyan]%}%28<...<%~%<<%{$fg
 
 # Utilisation des titres de xterm
 case $TERM in
-	xterm*|rxvt*|Eterm|screen)
-		precmd () {print -Pn "\e]0;%n@%m: %~\a"}
-		;;
+    xterm*|rxvt*|Eterm|screen)
+        precmd () {print -Pn "\e]0;%n@%m: %~\a"}
+        ;;
 esac
 
 # Alias
@@ -120,19 +120,19 @@ alias sshm='ssh premieremetz@tonbnc.fr'
 
 # Comportement "normal" des touches
 case $TERM in
-	screen|linux)
-		bindkey -e "^[[1~"	beginning-of-line
-		bindkey -e "^[[4~"	end-of-line
-		bindkey -e "^[[7~"	beginning-of-line
-		bindkey -e "^[[8~"	end-of-line
+    screen|linux)
+        bindkey -e "^[[1~"	beginning-of-line
+        bindkey -e "^[[4~"	end-of-line
+        bindkey -e "^[[7~"	beginning-of-line
+        bindkey -e "^[[8~"	end-of-line
 
-		;;
+        ;;
 
-	*)
-		bindkey -e "OH"	beginning-of-line
-		bindkey -e "OF"	end-of-line
-		bindkey -e "^[[7~"	beginning-of-line
-		bindkey -e "^[[8~"	end-of-line
-		;;
+    *)
+        bindkey -e "OH"	beginning-of-line
+        bindkey -e "OF"	end-of-line
+        bindkey -e "^[[7~"	beginning-of-line
+        bindkey -e "^[[8~"	end-of-line
+        ;;
 esac
 bindkey -e "[3~"	vi-delete-char
