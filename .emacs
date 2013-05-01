@@ -158,25 +158,24 @@
 (autoload 'graphviz-dot-mode "graphviz-dot-mode.el" "graphviz dot mode." t)
 (add-to-list 'auto-mode-alist '("\\.dot" . graphviz-dot-mode))
 
-(add-to-list 'auto-mode-alist '("\\.ml[iylp]?$" . tuareg-mode))
-(add-to-list 'auto-mode-alist '("\\.ocamlinit$" . tuareg-mode))
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
-(add-hook 'tuareg-mode-hook
-          '(lambda ()
-             (setq tuareg-sym-lock-keywords nil)
-             (setq standard-indent 2)
-             )
-          )
+;; (add-hook 'tuareg-mode-hook
+;;           '(lambda ()
+;;              (setq tuareg-sym-lock-keywords nil)
+;;              (setq standard-indent 2)
+;;              )
+;;           )
 
-;; Loading TypeRex mode for OCaml files
-(add-to-list 'load-path "@lispdir@")
-(add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . typerex-mode))
-(autoload 'typerex-mode "typerex" "Major mode for editing Caml code" t)
+(setq merlin-use-auto-complete-mode t)
+(require 'merlin)
+(add-hook 'typerex-mode-hook 'merlin-mode)
 
 ;; Loading TypeRex mode for OCaml files
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
 (add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . typerex-mode))
+(add-to-list 'interpreter-mode-alist '("ocamlrun" . typerex-mode))
+(add-to-list 'interpreter-mode-alist '("ocaml" . typerex-mode))
 (autoload 'typerex-mode "typerex" "Major mode for editing Caml code" t)
 
 ;; TypeRex mode configuration
@@ -184,26 +183,12 @@
 (setq typerex-in-indent 0)
 (setq-default indent-tabs-mode nil)
 
-;;(setq ocp-theme "tuareg_like")
-(setq ocp-theme "tuareg")
+(setq ocp-theme "tuareg_like")
 
 ;; Auto completion (experimental)
 ;; Don't use M-x invert-face default with auto-complete! (emacs -r is OK)
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/auto-complete-mode")
 (setq ocp-auto-complete t)
-
-;; Using <`> to complete whatever the context, and <C-`> for `
-(setq auto-complete-keys 'ac-keys-backquote-backslash)
-;; Options: nil (default), 'ac-keys-default-start-with-c-tab, 'ac-keys-two-dollar
-;; Note: this overrides individual auto-complete key settings
-
-;; I want immediate menu pop-up
-(setq ac-auto-show-menu 0.)
-;; Short delay before showing help
-(setq ac-quick-help-delay 0.3)
-
-(setq ac-auto-start nil)
-(setq auto-complete-keys 'ac-keys-default-start-with-c-tab)
 
 (load "auctex.el" nil t t)
 (load "preview-latex.el" nil t t)
