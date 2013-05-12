@@ -92,6 +92,7 @@ alias la='ls -FhA'
 alias ll='ls -Fhl'
 alias lla='ls -Fhla'
 
+alias rm='rm --preserve-root'
 alias cd..='cd ..'
 alias df='df -h'
 alias ggrep='grep 2>/dev/null'
