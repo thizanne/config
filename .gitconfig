@@ -1,10 +1,10 @@
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+        diff = auto
+        status = auto
+        branch = auto
 [user]
-	name = Thibault Suzanne
-	email = thi.suzanne@gmail.com
+        name = Thibault Suzanne
+        email = thi.suzanne@gmail.com
 [alias]
         st = status
         df = diff
@@ -12,4 +12,7 @@
         ci = commit
         br = branch
 [push]
-	default = simple
+        default = simple
+
+[core]
+        excludesfile = /home/thibault/.gitignore.global
