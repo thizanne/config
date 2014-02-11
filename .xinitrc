@@ -5,7 +5,6 @@ xbindkeys &
 setxkbmap -layout fr -option ctrl:swapcaps &
 numlockx &
 # xset s off &
-xset r rate 400 80 &
 xsetroot -cursor_name left_ptr &
 
 trayer --edge top --align right --SetDockType true --alpha 0 \
