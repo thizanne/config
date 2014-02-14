@@ -1,7 +1,8 @@
 /* urxvt */
 URxvt.background : black
 URxvt.foreground : white
-URxvt.font : xft:Inconsolata-Hellenic:size=12:antialias=true:pixelsize=12
+URxvt.font : xft:Inconsolata:size=12:antialias=true:pixelsize=14, \
+           xft:DejaVuSansMono:size=12:antialias=true:pixelsize=12
 URxvt.letterSpace : -1
 URxvt.scrollBar : false
 URxvt.transparent : true
