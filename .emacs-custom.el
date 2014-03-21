@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(org-beamer-outline-frame-title "Plan")
- '(org-emphasis-regexp-components (quote ("     ('\"{" "-       .,:!?;'\")}\\" "," "." 1)))
+ '(org-emphasis-regexp-components (quote ("     ('\"{" "-       .,:!?;'\")}\\" "," "." 1)) t)
  '(org-latex-listings (quote minted))
  '(org-latex-minted-langs (quote ((emacs-lisp "common-lisp") (cc "c++") (cperl "perl") (shell-script "bash") (typerex "ocaml"))))
  '(org-latex-pdf-process (quote ("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")))
