@@ -1,13 +1,13 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{enumerate}
 \usepackage[frenchb]{babel}
 \usepackage{geometry}
-\usepackage{amsthm}
 \usepackage{ifpdf}
 \usepackage{graphicx}
 \usepackage{proof}
-\usepackage{amssymb}
 %\usepackage[all]{xy}
 \usepackage{mathrsfs}
 \usepackage{mathpartir}
@@ -15,26 +15,54 @@
 \usepackage{cmll}
 \usepackage{tikz}
 \usepackage{color}
-
 \usepackage{minted}
-\usemintedstyle{manni}
-\usepackage{hyperref}
-\definecolor{hyperlinkscolor}{RGB}{20,20,90}
-\hypersetup{colorlinks=true, linkcolor=hyperlinkscolor,
-  anchorcolor=hyperlinkscolor, citecolor=green, filecolor=hyperlinkscolor,
-  menucolor=hyperlinkscolor, pagecolor=hyperlinkscolor, urlcolor=hyperlinkscolor}
-
 \usepackage{inconsolata}
-\setmonofont[Scale=0.8]{Inconsolata}
-
-\usepackage{caption}
-\DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
-\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
-
-\setmathfont{[Asana-Math]}
 
 \setmainfont[Mapping=tex-text,Ligatures=Common]{Linux Libertine O}
+\setmonofont[Scale=0.8]{Inconsolata}
+\setmathfont{[Asana-Math]}
 
 \frenchbsetup{og=«, fg=»}
 \frenchbsetup{StandardLists=true}
+
+\usemintedstyle{manni}
+
+\usepackage{hyperref}
+\definecolor{hyperlinkscolor}{RGB}{20,20,90}
+\hypersetup{
+        colorlinks=true,
+        citecolor=green,
+        linkcolor=hyperlinkscolor,
+        anchorcolor=hyperlinkscolor,
+        filecolor=hyperlinkscolor,
+        menucolor=hyperlinkscolor,
+        pagecolor=hyperlinkscolor,
+        urlcolor=hyperlinkscolor}
+
+\newtheorem{définition}{Définition}[section]
+\newtheorem{théorème}{Théorème}[section]
+\newtheorem{lemme}[théorème]{Lemme}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}[théorème]{Theorem}
+\newtheorem{lemma}[théorème]{Lemma}
+
+\newtheorem{proposition}[théorème]{Proposition}
+
+\newtheorem*{note}{Note}
+\newtheorem*{exemple}{Exemple}
+\newtheorem*{example}{Example}
+
+% %% The following part can probably be removed
+% \usepackage{caption}
+% \DeclareCaptionFont{white}{\color{white}}
+% \DeclareCaptionFormat{listing}
+%         {\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}
+%         {\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+% \captionsetup[lstlisting]{
+%         format=listing,
+%         labelfont=white,
+%         textfont=white,
+%         singlelinecheck=false,
+%         margin=0pt,
+%         font={bf,footnotesize}}
