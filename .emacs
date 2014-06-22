@@ -13,7 +13,13 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-(add-hook 'before-save-hook 'whitespace-cleanup)
+
+(defun my-whitespace-cleanup ()
+  "Cleans up whitespace if the file is not whitespace-dependent"
+  (if (not (equal major-mode 'makefile-gmake-mode))
+      (whitespace-cleanup)))
+
+(add-hook 'before-save-hook 'my-whitespace-cleanup)
 
 (global-set-key (kbd "C-v") 'scroll-up-line)
 (global-set-key (kbd "M-v") 'scroll-down-line)
