@@ -12,6 +12,6 @@ trayer --edge top --align right --SetDockType true --alpha 0 \
             --transparent true --height 17 --widthtype request --margin 160 &
 
 feh --bg-center ~/.xmonad/wallpaper.jpg &
-xmodmap ~/.xmodmap
+xmodmap ~/.xmodmap &
 
 exec xmonad
