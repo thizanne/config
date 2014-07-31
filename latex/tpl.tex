@@ -4,6 +4,7 @@
 \usepackage{amsthm}
 \usepackage{enumerate}
 \usepackage[frenchb]{babel}
+\usepackage{multicol}
 \usepackage{geometry}
 \usepackage{ifpdf}
 \usepackage{graphicx}
@@ -12,11 +13,15 @@
 \usepackage{mathrsfs}
 \usepackage{mathpartir}
 \usepackage{unicode-math}
+\usepackage{stmaryrd}
 \usepackage{cmll}
+\usepackage{syntax}
 \usepackage{tikz}
 \usepackage{color}
 \usepackage{minted}
 \usepackage{inconsolata}
+\usepackage{galois}
+% \usepackage{bussproofs} %% Use this for proofs
 
 \setmainfont[Mapping=tex-text,Ligatures=Common]{Linux Libertine O}
 \setmonofont[Scale=0.8]{Inconsolata}
@@ -24,6 +29,9 @@
 
 \frenchbsetup{og=«, fg=»}
 \frenchbsetup{StandardLists=true}
+
+\newcommand{\figref}[1]{\figurename~\ref{#1}}
+
 
 \usemintedstyle{manni}
 
@@ -36,12 +44,24 @@
         anchorcolor=hyperlinkscolor,
         filecolor=hyperlinkscolor,
         menucolor=hyperlinkscolor,
-        pagecolor=hyperlinkscolor,
         urlcolor=hyperlinkscolor}
+
+
+% Style for BNF grammars
+% Non terminal symbols in italic
+% `Quoted terminal' as default : normal font, quoted
+% "Non quoted terminals" in bold face
+
+\renewcommand{\grammarlabel}[2]{\textit{#1} \hfill #2}
+\renewcommand{\syntleft}[0]{\itshape}
+\renewcommand{\syntright}[0]{}
+\renewcommand{\ulitleft}[0]{\bfseries}
+\renewcommand{\ulitright}[0]{}
 
 \newtheorem{définition}{Définition}[section]
 \newtheorem{théorème}{Théorème}[section]
 \newtheorem{lemme}[théorème]{Lemme}
+\newtheorem{remarque}{Remarque}[section]
 
 \newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}[théorème]{Theorem}
