@@ -30,14 +30,14 @@
 (global-linum-mode 1)
 (setq linum-format
       (lambda (line)
-        (propertize
-         (format
-          (let ((w (length
-                    (number-to-string
-                     (count-lines (point-min) (point-max))))))
-            (concat "%" (number-to-string w) "d "))
-          line)
-         'face 'linum)))
+	(propertize
+	 (format
+	  (let ((w (length
+		    (number-to-string
+		     (count-lines (point-min) (point-max))))))
+	    (concat "%" (number-to-string w) "d "))
+	  line)
+	 'face 'linum)))
 
 (setq fill-nobreak-predicate '(fill-french-nobreak-p))
 
@@ -45,6 +45,7 @@
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "/usr/share/emacs/site-lisp/auto-complete/ac-dict")
 (ac-config-default)
+(setq ac-auto-start nil)
 (ac-set-trigger-key "TAB")
 
 (menu-bar-mode -1)
@@ -73,10 +74,10 @@
 (setq org-latex-listings 'minted)
 (setq org-latex-minted-options
       '(("frame" "none")
-        ("fontsize" "\\small")
-        ("linenos" "true")
-        ("mathescape" "true")
-        ))
+	("fontsize" "\\small")
+	("linenos" "true")
+	("mathescape" "true")
+	))
 
 (require 'ox-latex)
 
@@ -84,40 +85,40 @@
       '("latexmk -gg -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")
       )
 (add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass\{article\}
-               \\input\{/home/thibault/latex/tpl.tex\}
-               [NO-DEFAULT-PACKAGES]
-               [NO-PACKAGES]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-               ))
+	     '("article"
+	       "\\documentclass\{article\}
+	       \\input\{/home/thibault/latex/tpl.tex\}
+	       [NO-DEFAULT-PACKAGES]
+	       [NO-PACKAGES]"
+	       ("\\section\{%s\}" . "\\section*\{%s\}")
+	       ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+	       ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+	       ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+	       ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+	       ))
 
 (add-to-list 'org-latex-classes
-             '("koma-article"
-               "\\documentclass\{scrartcl\}
-                \\input\{/home/thibault/latex/tpl.tex\}
-                \[NO-DEFAULT-PACKAGES\]
-                \[NO-PACKAGES\]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-               ))
+	     '("koma-article"
+	       "\\documentclass\{scrartcl\}
+		\\input\{/home/thibault/latex/tpl.tex\}
+		\[NO-DEFAULT-PACKAGES\]
+		\[NO-PACKAGES\]"
+	       ("\\section\{%s\}" . "\\section*\{%s\}")
+	       ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+	       ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+	       ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+	       ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+	       ))
 
 (add-to-list 'org-latex-classes
-             '("beamer"
-               "\\documentclass\[presentation,svgnames\]\{beamer\}
-                \\input\{/home/thibault/latex/tpl_beamer.tex\}
-                [NO-DEFAULT-PACKAGES]
-                [NO-PACKAGES]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ))
+	     '("beamer"
+	       "\\documentclass\[presentation,svgnames\]\{beamer\}
+		\\input\{/home/thibault/latex/tpl_beamer.tex\}
+		[NO-DEFAULT-PACKAGES]
+		[NO-PACKAGES]"
+	       ("\\section\{%s\}" . "\\section*\{%s\}")
+	       ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+	       ))
 (setq org-beamer-frame-level 3)
 (setq org-beamer-theme "Darmstadt")
 
@@ -150,16 +151,16 @@
 
 (require 'mediawiki)
 (add-hook 'mediawiki-mode-hook
-          '(lambda ()
-             (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
-             ))
+	  '(lambda ()
+	     (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
+	     ))
 
 (setq mediawiki-site-alist
       (quote
        (
-        ("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
-        ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
-        )))
+	("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
+	("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
+	)))
 
 
 (autoload 'graphviz-dot-mode "graphviz-dot-mode.el" "graphviz dot mode." t)
