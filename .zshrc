@@ -112,11 +112,11 @@ alias emacsudo='EDITOR=emacsibolt visudo'
 alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
 alias vba='VisualBoyAdvance'
-alias yoplait='yaourt -Syyua --devel'
+alias yoplait='yaourt -Syyua --noconfirm'
 
 alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
-alias ssht='su -c "ssh maxibolt@tonbnc.fr -D 80"'
+alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
 
 
