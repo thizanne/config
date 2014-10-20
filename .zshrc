@@ -124,21 +124,21 @@ alias sshm='ssh premieremetz@tonbnc.fr'
 # Comportement "normal" des touches
 case $TERM in
     screen|linux)
-        bindkey -e "^[[1~"	beginning-of-line
-        bindkey -e "^[[4~"	end-of-line
-        bindkey -e "^[[7~"	beginning-of-line
-        bindkey -e "^[[8~"	end-of-line
+        bindkey -e "^[[1~" beginning-of-line
+        bindkey -e "^[[4~" end-of-line
+        bindkey -e "^[[7~" beginning-of-line
+        bindkey -e "^[[8~" end-of-line
 
         ;;
 
     *)
-        bindkey -e "OH"	beginning-of-line
-        bindkey -e "OF"	end-of-line
-        bindkey -e "^[[7~"	beginning-of-line
-        bindkey -e "^[[8~"	end-of-line
+        bindkey -e "OH" beginning-of-line
+        bindkey -e "OF" end-of-line
+        bindkey -e "^[[7~" beginning-of-line
+        bindkey -e "^[[8~" end-of-line
         ;;
 esac
-bindkey -e "[3~"	vi-delete-char
+bindkey -e "[3~" vi-delete-char
 
 # OPAM configuration
 . /home/thibault/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
