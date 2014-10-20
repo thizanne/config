@@ -42,11 +42,11 @@
 (setq fill-nobreak-predicate '(fill-french-nobreak-p))
 
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/auto-complete")
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "/usr/share/emacs/site-lisp/auto-complete/ac-dict")
-(ac-config-default)
-(setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
+;; (require 'auto-complete-config)
+;; (add-to-list 'ac-dictionary-directories "/usr/share/emacs/site-lisp/auto-complete/ac-dict")
+;; (ac-config-default)
+;; (setq ac-auto-start nil)
+;; (ac-set-trigger-key "TAB")
 
 (menu-bar-mode -1)
 (column-number-mode 1)
@@ -84,46 +84,46 @@
         ("mathescape" "true")
         ))
 
-(require 'ox-latex)
+;; (require 'ox-latex)
 
 (setq org-latex-pdf-process
       '("latexmk -gg -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")
       )
-(add-to-list 'org-latex-classes
-             '("article"
-               "\\documentclass\{article\}
-               \\input\{/home/thibault/latex/tpl.tex\}
-               [NO-DEFAULT-PACKAGES]
-               [NO-PACKAGES]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-               ))
+;; (add-to-list 'org-latex-classes
+;;              '("article"
+;;                "\\documentclass\{article\}
+;;                \\input\{/home/thibault/latex/tpl.tex\}
+;;                [NO-DEFAULT-PACKAGES]
+;;                [NO-PACKAGES]"
+;;                ("\\section\{%s\}" . "\\section*\{%s\}")
+;;                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+;;                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+;;                ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+;;                ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+;;                ))
 
-(add-to-list 'org-latex-classes
-             '("koma-article"
-               "\\documentclass\{scrartcl\}
-                \\input\{/home/thibault/latex/tpl.tex\}
-                \[NO-DEFAULT-PACKAGES\]
-                \[NO-PACKAGES\]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-               ))
+;; (add-to-list 'org-latex-classes
+;;              '("koma-article"
+;;                "\\documentclass\{scrartcl\}
+;;                 \\input\{/home/thibault/latex/tpl.tex\}
+;;                 \[NO-DEFAULT-PACKAGES\]
+;;                 \[NO-PACKAGES\]"
+;;                ("\\section\{%s\}" . "\\section*\{%s\}")
+;;                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+;;                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+;;                ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+;;                ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+;;                ))
 
-(add-to-list 'org-latex-classes
-             '("beamer"
-               "\\documentclass\[presentation,svgnames\]\{beamer\}
-                \\input\{/home/thibault/latex/tpl_beamer.tex\}
-                [NO-DEFAULT-PACKAGES]
-                [NO-PACKAGES]"
-               ("\\section\{%s\}" . "\\section*\{%s\}")
-               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-               ))
+;; (add-to-list 'org-latex-classes
+;;              '("beamer"
+;;                "\\documentclass\[presentation,svgnames\]\{beamer\}
+;;                 \\input\{/home/thibault/latex/tpl_beamer.tex\}
+;;                 [NO-DEFAULT-PACKAGES]
+;;                 [NO-PACKAGES]"
+;;                ("\\section\{%s\}" . "\\section*\{%s\}")
+;;                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+;;                ))
 (setq org-beamer-frame-level 3)
 (setq org-beamer-theme "Darmstadt")
 
@@ -143,29 +143,29 @@
 (add-to-list 'auto-mode-alist '("\\.py" . python-mode))
 (setq py-shell-name "python3")
 
-(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+;; (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/cc-mode/")
 (setq c-default-style "k&r" c-basic-offset 4)
 
-(require 'pkgbuild-mode)
-(add-to-list 'auto-mode-alist '("PKGBUILD$" . pkgbuild-mode))
+;; (require 'pkgbuild-mode)
+;; (add-to-list 'auto-mode-alist '("PKGBUILD$" . pkgbuild-mode))
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 
-(require 'mediawiki)
-(add-hook 'mediawiki-mode-hook
-          '(lambda ()
-             (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
-             ))
+;; (require 'mediawiki)
+;; (add-hook 'mediawiki-mode-hook
+;;           '(lambda ()
+;;              (global-set-key (kbd "M-RET") 'mediawiki-open-page-at-point)
+;;              ))
 
-(setq mediawiki-site-alist
-      (quote
-       (
-        ("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
-        ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
-        )))
+;; (setq mediawiki-site-alist
+;;       (quote
+;;        (
+;;         ("wiki.rez" "http://wiki.rezometz.org/" "Suze" "" "Accueil")
+;;         ("wpfr" "http://fr.wikipedia.org/w/" "thizanne" "" "Main Page")
+;;         )))
 
 
 (autoload 'graphviz-dot-mode "graphviz-dot-mode.el" "graphviz dot mode." t)
@@ -235,52 +235,52 @@
 (require 'erlang-flymake)
 
 
-(defun color-theme-thizanne ()
-  (interactive)
-  (color-theme-install
-   '(color-theme-thizanne
-     ((background-mode . light)
-      (border-color . "#000000")
-      (cursor-color . "#5cf4ff")
-      (foreground-color . "#ffffff")
-      (mouse-color . "black"))
-     (fringe ((t (:background "#000000"))))
-     (mode-line ((t (:foreground "#f50000" :background "#ffea0a"))))
-     (region ((t (:background "#091158"))))
-     (font-lock-builtin-face ((t (:foreground "#008000"))))
-     (font-lock-comment-face ((t (:foreground "#fade00"))))
-     (font-lock-function-name-face ((t (:foreground "#2f85f5"))))
-     (font-lock-keyword-face ((t (:foreground "#0066eb"))))
-     (font-lock-string-face ((t (:foreground "#ff8000"))))
-     (font-lock-type-face ((t (:foreground "#00ffac"))))
-     (font-lock-variable-name-face ((t (:foreground "#00d4eb"))))
-     (minibuffer-prompt ((t (:foreground "#ffbd05" :bold t))))
-     (font-lock-warning-face ((t (:foreground "Red" :bold t))))
-     )))
+;; (defun color-theme-thizanne ()
+;;   (interactive)
+;;   (color-theme-install
+;;    '(color-theme-thizanne
+;;      ((background-mode . light)
+;;       (border-color . "#000000")
+;;       (cursor-color . "#5cf4ff")
+;;       (foreground-color . "#ffffff")
+;;       (mouse-color . "black"))
+;;      (fringe ((t (:background "#000000"))))
+;;      (mode-line ((t (:foreground "#f50000" :background "#ffea0a"))))
+;;      (region ((t (:background "#091158"))))
+;;      (font-lock-builtin-face ((t (:foreground "#008000"))))
+;;      (font-lock-comment-face ((t (:foreground "#fade00"))))
+;;      (font-lock-function-name-face ((t (:foreground "#2f85f5"))))
+;;      (font-lock-keyword-face ((t (:foreground "#0066eb"))))
+;;      (font-lock-string-face ((t (:foreground "#ff8000"))))
+;;      (font-lock-type-face ((t (:foreground "#00ffac"))))
+;;      (font-lock-variable-name-face ((t (:foreground "#00d4eb"))))
+;;      (minibuffer-prompt ((t (:foreground "#ffbd05" :bold t))))
+;;      (font-lock-warning-face ((t (:foreground "Red" :bold t))))
+;;      )))
 
-(defface tuareg-font-lock-governing-face
-  '((((background light))
-     (:foreground "#0066eb" :bold nil))
-    (t (:foreground "#0066eb" :bold nil)))
-  "Face description for governing/leading keywords."
-  :group 'tuareg-faces)
+;; (defface tuareg-font-lock-governing-face
+;;   '((((background light))
+;;      (:foreground "#0066eb" :bold nil))
+;;     (t (:foreground "#0066eb" :bold nil)))
+;;   "Face description for governing/leading keywords."
+;;   :group 'tuareg-faces)
 
-(defvar tuareg-font-lock-governing-face
-  'tuareg-font-lock-governing-face)
+;; (defvar tuareg-font-lock-governing-face
+;;   'tuareg-font-lock-governing-face)
 
-(defface tuareg-font-lock-operator-face
-  '((((background light)) (:foreground "brown"))
-    (t (:foreground "#2f85f5")))
-  "Face description for all operators."
-  :group 'tuareg-faces)
+;; (defface tuareg-font-lock-operator-face
+;;   '((((background light)) (:foreground "brown"))
+;;     (t (:foreground "#2f85f5")))
+;;   "Face description for all operators."
+;;   :group 'tuareg-faces)
 
-(defvar tuareg-font-lock-operator-face
-  'tuareg-font-lock-operator-face)
+;; (defvar tuareg-font-lock-operator-face
+;;   'tuareg-font-lock-operator-face)
 
-(provide 'color-theme-thizanne)
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-thizanne)
+;; (provide 'color-theme-thizanne)
+;; (require 'color-theme)
+;; (color-theme-initialize)
+;; (color-theme-thizanne)
 
 
 ;;(add-to-list 'auto-mode-alist '("\\.lua" . lua-mode))
