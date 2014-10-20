@@ -1,6 +1,6 @@
 # Configuration zsh de Thibault Suzanne
-TERM=rxvt-unicode-256color
-#TERM=rxvt-unicode
+#TERM=rxvt-unicode-256color
+TERM=rxvt-unicode
 PATH=${HOME}/bin:${HOME}/.cabal/bin:$PATH
 
 XDG_CONFIG_HOME=${HOME}/.config
@@ -13,7 +13,8 @@ setopt hist_ignore_space
 setopt appendhistory
 
 export GDK_USE_XFT=0
-export EDITOR='emacsibolt'
+#export EDITOR='emacsibolt'
+export EDITOR='emacs'
 export BROWSER='firefox'
 
 # Raccourcis clavier
@@ -107,14 +108,14 @@ alias dhcpcd='sudo dhcpcd'
 
 alias am='alsamixer'
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
-alias emacs='emacsibolt'
+#alias emacs='emacsibolt'
 alias emacsudo='EDITOR=emacsibolt visudo'
 alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
 alias vba='VisualBoyAdvance'
 alias yoplait='yaourt -Syyua --noconfirm'
 
-alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
+#alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
