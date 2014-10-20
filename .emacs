@@ -67,7 +67,7 @@
 ;;   )
 
 (autoload 'markdown-mode "markdown-mode.el"
-   "Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 
 
@@ -181,7 +181,7 @@
 ;;           )
 
 
-(add-to-list 'load-path "/home/thibault/.opam/4.02.0/share/emacs/site-lisp")
+(add-to-list 'load-path "~/.opam/4.02.0/share/emacs/site-lisp")
 (require 'ocp-indent)
 (add-hook 'typerex-mode-hook 'ocp-setup-indent t)
 
