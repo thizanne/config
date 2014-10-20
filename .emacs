@@ -181,7 +181,7 @@
 ;;           )
 
 
-(add-to-list 'load-path "~/.opam/4.02.0/share/emacs/site-lisp")
+(add-to-list 'load-path "~/.opam/4.02.1/share/emacs/site-lisp")
 (require 'ocp-indent)
 (add-hook 'typerex-mode-hook 'ocp-setup-indent t)
 
