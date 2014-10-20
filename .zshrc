@@ -110,7 +110,7 @@ alias am='alsamixer'
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
 #alias emacs='emacsibolt'
 alias emacsudo='EDITOR=emacsibolt visudo'
-alias ocaml='rlwrap ocaml'
+alias ocaml='ledit ocaml'
 alias plow='plow -m'
 alias vba='VisualBoyAdvance'
 alias yoplait='yaourt -Syyua --noconfirm'
