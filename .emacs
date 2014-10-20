@@ -184,6 +184,7 @@
 (add-to-list 'load-path "~/.opam/4.02.1/share/emacs/site-lisp")
 (require 'ocp-indent)
 (add-hook 'typerex-mode-hook 'ocp-setup-indent t)
+(add-hook 'tuareg-mode-hook 'ocp-setup-indent t)
 
 ;; Add opam emacs directory to the load-path
 (setq opam-share (substring (shell-command-to-string "opam config var share 2> /dev/null") 0 -1))
@@ -199,9 +200,11 @@
 ;; Use opam switch to lookup ocamlmerlin binary
 (setq merlin-command 'opam)
 
+(add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . tuareg-mode))
+
 ;; Loading TypeRex mode for OCaml files
 (add-to-list 'load-path "/usr/share/emacs/site-lisp")
-(add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . typerex-mode))
+;; (add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . typerex-mode))
 (add-to-list 'interpreter-mode-alist '("ocamlrun" . typerex-mode))
 (add-to-list 'interpreter-mode-alist '("ocaml" . typerex-mode))
 (autoload 'typerex-mode "typerex" "Major mode for editing Caml code" t)
