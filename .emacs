@@ -13,13 +13,13 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+(setq-default indent-tabs-mode nil)
 
-(defun my-whitespace-cleanup ()
-  "Cleans up whitespace if the file is not whitespace-dependent"
-  (if (not (equal major-mode 'makefile-gmake-mode))
-      (whitespace-cleanup)))
+(defun my-tabs-makefile-hook ()
+  (setq indent-tabs-mode t))
+(add-hook 'makefile-mode-hook 'my-tabs-makefile-hook)
 
-(add-hook 'before-save-hook 'my-whitespace-cleanup)
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 (global-set-key (kbd "C-v") 'scroll-up-line)
 (global-set-key (kbd "M-v") 'scroll-down-line)
