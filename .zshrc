@@ -141,5 +141,5 @@ esac
 bindkey -e "[3~" vi-delete-char
 
 # OPAM configuration
-. /home/thibault/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 eval `opam config env`
