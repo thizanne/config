@@ -13,7 +13,7 @@ setopt hist_ignore_space
 setopt appendhistory
 
 export GDK_USE_XFT=0
-export EDITOR='emacsibolt'
+export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
 
 # Raccourcis clavier
@@ -107,8 +107,8 @@ alias dhcpcd='sudo dhcpcd'
 
 alias am='alsamixer'
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
-alias emacs='emacsibolt'
-alias emacsudo='EDITOR=emacsibolt visudo'
+alias emacs='emacsclient.sh'
+alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
 alias vba='VisualBoyAdvance'
