@@ -107,8 +107,7 @@ alias dhcpcd='sudo dhcpcd'
 
 alias am='alsamixer'
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
-#alias emacs='emacsibolt' # To remove when the next one is well tested
-alias emacs='DISPLAY= exec emacsclient --alternate-editor="" -c "$@"'
+alias emacs='emacsibolt'
 alias emacsudo='EDITOR=emacsibolt visudo'
 alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
