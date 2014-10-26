@@ -19,3 +19,17 @@
 
 [push]
     default = simple
+
+[diff]
+    tool = ediff
+    guitool = ediff
+
+[difftool "ediff"]
+    cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED
+
+[merge]
+    tool = ediff
+
+[mergetool "ediff"]
+    cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
+    trustExitCode = true
