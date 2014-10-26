@@ -13,7 +13,7 @@ setopt hist_ignore_space
 setopt appendhistory
 
 export GDK_USE_XFT=0
-export EDITOR='emacsibolt'
+export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
 
 # Raccourcis clavier
@@ -107,8 +107,8 @@ alias dhcpcd='sudo dhcpcd'
 
 alias am='alsamixer'
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
-alias emacs='emacsibolt'
-alias emacsudo='EDITOR=emacsibolt visudo'
+alias emacs='emacsclient.sh'
+alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
 alias vba='VisualBoyAdvance'
@@ -124,22 +124,22 @@ alias sshm='ssh premieremetz@tonbnc.fr'
 # Comportement "normal" des touches
 case $TERM in
     screen|linux)
-        bindkey -e "^[[1~"	beginning-of-line
-        bindkey -e "^[[4~"	end-of-line
-        bindkey -e "^[[7~"	beginning-of-line
-        bindkey -e "^[[8~"	end-of-line
+        bindkey -e "^[[1~" beginning-of-line
+        bindkey -e "^[[4~" end-of-line
+        bindkey -e "^[[7~" beginning-of-line
+        bindkey -e "^[[8~" end-of-line
 
         ;;
 
     *)
-        bindkey -e "OH"	beginning-of-line
-        bindkey -e "OF"	end-of-line
-        bindkey -e "^[[7~"	beginning-of-line
-        bindkey -e "^[[8~"	end-of-line
+        bindkey -e "OH" beginning-of-line
+        bindkey -e "OF" end-of-line
+        bindkey -e "^[[7~" beginning-of-line
+        bindkey -e "^[[8~" end-of-line
         ;;
 esac
-bindkey -e "[3~"	vi-delete-char
+bindkey -e "[3~" vi-delete-char
 
 # OPAM configuration
-. /home/thibault/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 eval `opam config env`
