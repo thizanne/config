@@ -13,6 +13,10 @@
 (set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
 (setq-default indent-tabs-mode nil)
 
 (defun my-tabs-makefile-hook ()
