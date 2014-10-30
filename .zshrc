@@ -16,6 +16,10 @@ export GDK_USE_XFT=0
 export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
 
+# Gnome Keyring
+eval $(gnome-keyring-daemon --start --components=ssh)
+export SSH_AUTH_SOCK
+
 # Raccourcis clavier
 bindkey -e
 
@@ -113,8 +117,6 @@ alias ocaml='rlwrap ocaml'
 alias plow='plow -m'
 alias vba='VisualBoyAdvance'
 alias yoplait='yaourt -Syyua --noconfirm'
-
-alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
