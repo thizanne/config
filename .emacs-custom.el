@@ -69,8 +69,7 @@
  '(proof-tree-ignored-commands-regexp "^\\(\\(Show\\)\\|\\(Locate\\)\\|\\(Theorem\\)\\|\\(Lemma\\)\\|\\(Remark\\)\\|\\(Fact\\)\\|\\(Corollary\\)\\|\\(Proposition\\)\\|\\(Definition\\)\\|\\(Let\\)\\|\\(Fixpoint\\)\\|\\(CoFixpoint\\)\\)")
  '(proof-tree-navigation-command-regexp "^\\(Focus\\)\\|\\(Unfocus\\)")
  '(proof-tree-show-sequent-command (quote coq-show-sequent-command))
- '(typerex-font-lock-symbols t)
- '(typerex-library-path "/usr/lib/ocaml"))
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
