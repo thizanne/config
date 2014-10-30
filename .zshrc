@@ -17,7 +17,7 @@ export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
 
 # Gnome Keyring
-eval $(gnome-keyring-daemon --start --components=ssh)
+eval $(gnome-keyring-daemon --start --components=ssh 2>/dev/null)
 export SSH_AUTH_SOCK
 
 # Raccourcis clavier
