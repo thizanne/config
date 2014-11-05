@@ -83,3 +83,9 @@
   (setq indent-tabs-mode t))
 
 (add-hook 'makefile-mode-hook 'my-tabs-makefile-hook)
+
+;; start server
+
+(add-hook
+ 'after-init-hook
+ (lambda () (server-start)))
