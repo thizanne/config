@@ -41,6 +41,22 @@
 (column-number-mode 1)
 (global-linum-mode 1)
 
+;; Don't display line numbers on a few major modes
+(setq
+ linum-disabled-modes-list
+ '(
+   eshell-mode
+   wl-summary-mode
+   compilation-mode
+   org-mode
+   ))
+
+(defun linum-on ()
+  (unless
+      (or
+       (minibufferp)
+       (member major-mode linum-disabled-modes-list)) (linum-mode 1)))
+
 ;; Numéros de lignes alignés à droite, avec un espace entre le numéro
 ;; et le texte
 (setq linum-format
