@@ -114,6 +114,8 @@ alias plow='plow -m'
 alias vba='VisualBoyAdvance'
 alias yoplait='yaourt -Syyua --noconfirm'
 
+alias aptitude='sudo aptitude'
+
 #alias ssh='eval $(/usr/bin/keychain --eval --agents ssh -Q --quiet .ssh/id_rsa) && ssh'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
