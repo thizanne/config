@@ -214,4 +214,4 @@
      )))
 
 (provide 'color-theme-thizanne)
-(color-theme-thizanne)
+(color-theme-solarized)
