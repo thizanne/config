@@ -173,45 +173,45 @@
 
 (defface tuareg-font-lock-governing-face
   '((((background light))
-     (:foreground "#0066eb" :bold nil))
-    (t (:foreground "#0066eb" :bold nil)))
+     (:foreground "#b58900" :bold t))
+    (t (:foreground "#b58900" :bold t)))
   "Face description for governing/leading keywords."
   :group 'tuareg-faces)
 
-(defvar tuareg-font-lock-governing-face
-  'tuareg-font-lock-governing-face)
+;; (defvar tuareg-font-lock-governing-face
+;;   'tuareg-font-lock-governing-face)
 
-(defface tuareg-font-lock-operator-face
-  '((((background light)) (:foreground "brown"))
-    (t (:foreground "#2f85f5")))
-  "Face description for all operators."
-  :group 'tuareg-faces)
+;; (defface tuareg-font-lock-operator-face
+;;   '((((background light)) (:foreground "brown"))
+;;     (t (:foreground "#2f85f5")))
+;;   "Face description for all operators."
+;;   :group 'tuareg-faces)
 
 (defvar tuareg-font-lock-operator-face
   'tuareg-font-lock-operator-face)
 
-(defun color-theme-thizanne ()
-  (interactive)
-  (color-theme-install
-   '(color-theme-thizanne
-     ((background-mode . light)
-      (border-color . "#000000")
-      (cursor-color . "#5cf4ff")
-      (foreground-color . "#ffffff")
-      (mouse-color . "black"))
-     (fringe ((t (:background "#000000"))))
-     (mode-line ((t (:foreground "#f50000" :background "#ffea0a"))))
-     (region ((t (:background "#091158"))))
-     (font-lock-builtin-face ((t (:foreground "#008000"))))
-     (font-lock-comment-face ((t (:foreground "#fade00"))))
-     (font-lock-function-name-face ((t (:foreground "#2f85f5"))))
-     (font-lock-keyword-face ((t (:foreground "#0066eb"))))
-     (font-lock-string-face ((t (:foreground "#ff8000"))))
-     (font-lock-type-face ((t (:foreground "#00ffac"))))
-     (font-lock-variable-name-face ((t (:foreground "#00d4eb"))))
-     (minibuffer-prompt ((t (:foreground "#ffbd05" :bold t))))
-     (font-lock-warning-face ((t (:foreground "Red" :bold t))))
-     )))
+;; (defun color-theme-thizanne ()
+;;   (interactive)
+;;   (color-theme-install
+;;    '(color-theme-thizanne
+;;      ((background-mode . light)
+;;       (border-color . "#000000")
+;;       (cursor-color . "#5cf4ff")
+;;       (foreground-color . "#ffffff")
+;;       (mouse-color . "black"))
+;;      (fringe ((t (:background "#000000"))))
+;;      (mode-line ((t (:foreground "#f50000" :background "#ffea0a"))))
+;;      (region ((t (:background "#091158"))))
+;;      (font-lock-builtin-face ((t (:foreground "#008000"))))
+;;      (font-lock-comment-face ((t (:foreground "#fade00"))))
+;;      (font-lock-function-name-face ((t (:foreground "#2f85f5"))))
+;;      (font-lock-keyword-face ((t (:foreground "#0066eb"))))
+;;      (font-lock-string-face ((t (:foreground "#ff8000"))))
+;;      (font-lock-type-face ((t (:foreground "#00ffac"))))
+;;      (font-lock-variable-name-face ((t (:foreground "#00d4eb"))))
+;;      (minibuffer-prompt ((t (:foreground "#ffbd05" :bold t))))
+;;      (font-lock-warning-face ((t (:foreground "Red" :bold t))))
+;;      )))
 
-(provide 'color-theme-thizanne)
-(color-theme-solarized)
+;; (provide 'color-theme-thizanne)
+(color-theme-solarized-dark)
