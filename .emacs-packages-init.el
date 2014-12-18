@@ -33,9 +33,9 @@
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 
-(add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . typerex-mode))
-(add-to-list 'interpreter-mode-alist '("ocamlrun" . typerex-mode))
-(add-to-list 'interpreter-mode-alist '("ocaml" . typerex-mode))
+(add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . tuareg-mode))
+(add-to-list 'interpreter-mode-alist '("ocamlrun" . tuareg-mode))
+(add-to-list 'interpreter-mode-alist '("ocaml" . tuareg-mode))
 
 (setq ocp-server-command "/usr/bin/ocp-wizard")
 (setq ocp-theme "tuareg-like")
