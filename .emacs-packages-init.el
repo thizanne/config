@@ -30,7 +30,9 @@
 (add-hook 'caml-mode-hook 'merlin-mode t)
 (add-hook 'typerex-mode-hook 'merlin-mode t)
 
-(setq merlin-use-auto-complete-mode 'easy)
+; Make company aware of merlin
+(add-to-list 'company-backends 'merlin-company-backend)
+
 (setq merlin-command 'opam)
 
 ;; tuareg
