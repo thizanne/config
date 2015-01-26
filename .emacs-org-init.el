@@ -25,42 +25,43 @@
       )
 
 ;; latex classes
+(setq org-latex-classes '())
 
-;; (add-to-list 'org-latex-classes
-;;              '("article"
-;;                "\\documentclass\{article\}
-;;                \\input\{/home/thibault/latex/tpl.tex\}
-;;                [NO-DEFAULT-PACKAGES]
-;;                [NO-PACKAGES]"
-;;                ("\\section\{%s\}" . "\\section*\{%s\}")
-;;                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-;;                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-;;                ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-;;                ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-;;                ))
+(add-to-list 'org-latex-classes
+             '("article"
+               "\\documentclass\{article\}
+               \\input\{$HOME/latex/tpl.tex\}
+               [NO-DEFAULT-PACKAGES]
+               [NO-PACKAGES]"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+               ))
 
-;; (add-to-list 'org-latex-classes
-;;              '("koma-article"
-;;                "\\documentclass\{scrartcl\}
-;;                 \\input\{/home/thibault/latex/tpl.tex\}
-;;                 \[NO-DEFAULT-PACKAGES\]
-;;                 \[NO-PACKAGES\]"
-;;                ("\\section\{%s\}" . "\\section*\{%s\}")
-;;                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-;;                ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
-;;                ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
-;;                ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
-;;                ))
+(add-to-list 'org-latex-classes
+             '("koma-article"
+               "\\documentclass\{scrartcl\}
+                \\input\{$HOME/latex/tpl.tex\}
+                \[NO-DEFAULT-PACKAGES\]
+                \[NO-PACKAGES\]"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+               ))
 
-;; (add-to-list 'org-latex-classes
-;;              '("beamer"
-;;                "\\documentclass\[presentation,svgnames\]\{beamer\}
-;;                 \\input\{/home/thibault/latex/tpl_beamer.tex\}
-;;                 [NO-DEFAULT-PACKAGES]
-;;                 [NO-PACKAGES]"
-;;                ("\\section\{%s\}" . "\\section*\{%s\}")
-;;                ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
-;;                ))
+(add-to-list 'org-latex-classes
+             '("beamer"
+               "\\documentclass\[presentation,svgnames\]\{beamer\}
+                \\input\{$HOME/latex/tpl_beamer.tex\}
+                [NO-DEFAULT-PACKAGES]
+                [NO-PACKAGES]"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ))
 
 ;; beamer
 
