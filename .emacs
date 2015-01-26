@@ -89,3 +89,8 @@
 (add-hook
  'after-init-hook
  (lambda () (server-start)))
+
+(add-hook
+ 'after-init-hook
+ 'global-company-mode
+ )
