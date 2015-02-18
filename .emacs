@@ -9,6 +9,13 @@
  'after-init-hook
  (lambda () (load "~/.emacs-packages-init.el")))
 
+;; Company-mode
+
+(add-hook
+ 'after-init-hook
+ 'global-company-mode
+ )
+
 ;; org-mode special file
 
 (add-hook
