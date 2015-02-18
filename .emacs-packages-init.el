@@ -1,5 +1,3 @@
-;; color-theme
-
 ;; opam
 
 ;; ;; To automatically add opam emacs directory to the load-path
@@ -172,12 +170,15 @@
 (require 'color-theme)
 (color-theme-initialize)
 
-(defface tuareg-font-lock-governing-face
-  '((((background light))
-     (:foreground "#b58900" :bold t))
-    (t (:foreground "#b58900" :bold t)))
-  "Face description for governing/leading keywords."
-  :group 'tuareg-faces)
+(add-to-list 'custom-theme-load-path "~/config/emacs-color-theme-solarized")
+(load-theme 'solarized t)
+
+;; (defface tuareg-font-lock-governing-face
+;;   '((((background light))
+;;      (:foreground "#b58900" :bold t))
+;;     (t (:foreground "#b58900" :bold t)))
+;;   "Face description for governing/leading keywords."
+;;   :group 'tuareg-faces)
 
 ;; (defvar tuareg-font-lock-governing-face
 ;;   'tuareg-font-lock-governing-face)
@@ -188,8 +189,8 @@
 ;;   "Face description for all operators."
 ;;   :group 'tuareg-faces)
 
-(defvar tuareg-font-lock-operator-face
-  'tuareg-font-lock-operator-face)
+;; (defvar tuareg-font-lock-operator-face
+;;  'tuareg-font-lock-operator-face)
 
 ;; (defun color-theme-thizanne ()
 ;;   (interactive)
@@ -215,4 +216,3 @@
 ;;      )))
 
 ;; (provide 'color-theme-thizanne)
-(color-theme-solarized-dark)
