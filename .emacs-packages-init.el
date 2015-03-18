@@ -16,6 +16,10 @@
 
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
 
+;; utop
+
+(autoload 'utop "utop" "Toplevel for OCaml" t)
+
 ;; ocp-indent
 
 (require 'ocp-indent)
