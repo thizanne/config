@@ -9,6 +9,16 @@
 (setq org-src-fontify-natively t)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
+;; active Babel languages
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (ocaml . t)
+   (python . t)
+   (sh . t)
+   ))
+
 ;; Use minted
 
 (setq org-latex-listings 'minted)
