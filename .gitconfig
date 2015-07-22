@@ -23,6 +23,7 @@
 [diff]
     tool = ediff
     guitool = ediff
+    submodule = log
 
 [difftool "ediff"]
     cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED
