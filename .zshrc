@@ -145,4 +145,4 @@ bindkey -e "[3~" vi-delete-char
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 eval `opam config env`
-export OPAMEXTERNALSOLVER=cudf_remote_proxy.sh
+# export OPAMEXTERNALSOLVER=cudf_remote_proxy.sh
