@@ -54,6 +54,19 @@
                ))
 
 (add-to-list 'org-latex-classes
+             '("llncs"
+               "\\documentclass\{llncs\}
+                \\input\{$HOME/latex/tpl_llncs.tex\}
+                \[NO-DEFAULT-PACKAGES\]
+                \[NO-PACKAGES\]"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+               ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+               ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+               ))
+
+(add-to-list 'org-latex-classes
              '("beamer"
                "\\documentclass\[presentation,svgnames\]\{beamer\}
                 \\input\{$HOME/latex/tpl_beamer.tex\}
