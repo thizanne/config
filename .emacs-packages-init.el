@@ -5,7 +5,7 @@
 ;; (substring
 ;; (shell-command-to-string "opam config var share 2> /dev/null")
 ;; 0 -1))
-(setq opam-share "~/.opam/4.02.1/share")
+(setq opam-share "~/.opam/4.02.3/share")
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
 
 ;; ocp-indent
