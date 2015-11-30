@@ -9,7 +9,9 @@
 (setq org-src-fontify-natively t)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
 
-;; active Babel languages
+;; Babel
+
+;;;; active Babel languages
 
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -18,6 +20,9 @@
    (python . t)
    (sh . t)
    ))
+
+;;;; Don't ask before evaluating
+(setq org-confirm-babel-evaluate nil)
 
 ;; Use minted
 
