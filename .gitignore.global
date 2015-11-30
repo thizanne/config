@@ -7,3 +7,5 @@
 *.byte
 _build
 a.out
+
+*.o
