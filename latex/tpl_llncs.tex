@@ -1,0 +1,84 @@
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{amsthm}
+\usepackage{enumerate}
+\usepackage[british]{babel}
+\usepackage{multicol}
+\usepackage{geometry}
+\usepackage{ifpdf}
+\usepackage{graphicx}
+%\usepackage{proof}
+%\usepackage[all]{xy}
+\usepackage{mathrsfs}
+\usepackage{mathpartir}
+%\usepackage{unicode-math}
+\usepackage{stmaryrd}
+\usepackage{cmll}
+\usepackage{syntax}
+\usepackage{tikz}
+\usepackage{color}
+%\usepackage{minted}
+\usepackage{inconsolata}
+\usepackage{galois}
+% \usepackage{bussproofs} %% Use this for proofs
+
+%\setmainfont[Mapping=tex-text,Ligatures=Common]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Inconsolata}
+%\setmathfont{[Asana-Math]}
+
+\newcommand{\figref}[1]{\figurename~\ref{#1}}
+
+%\usemintedstyle{manni}
+
+\usepackage{hyperref}
+\definecolor{hyperlinkscolor}{RGB}{20,20,90}
+\hypersetup{
+        colorlinks=true,
+        citecolor=hyperlinkscolor,
+        linkcolor=hyperlinkscolor,
+        anchorcolor=hyperlinkscolor,
+        filecolor=hyperlinkscolor,
+        menucolor=hyperlinkscolor,
+        urlcolor=hyperlinkscolor}
+
+
+% Style for BNF grammars
+% Non terminal symbols in italic
+% `Quoted terminal' as default : normal font, quoted
+% "Non quoted terminals" in bold face
+
+% \renewcommand{\grammarlabel}[2]{\textit{#1} \hfill #2}
+% \renewcommand{\syntleft}[0]{\itshape}
+% \renewcommand{\syntright}[0]{}
+% \renewcommand{\ulitleft}[0]{\bfseries}
+% \renewcommand{\ulitright}[0]{}
+
+% \newtheorem{définition}{Définition}[section]
+% \newtheorem{théorème}{Théorème}[section]
+% \newtheorem{lemme}[théorème]{Lemme}
+% \newtheorem{remarque}{Remarque}[section]
+
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{theorem}[théorème]{Theorem}
+% \newtheorem{lemma}[théorème]{Lemma}
+
+% \newtheorem{proposition}[théorème]{Proposition}
+
+% \newtheorem*{note}{Note}
+% \newtheorem*{exemple}{Exemple}
+% \newtheorem*{example}{Example}
+
+% %% The following part can probably be removed
+% \usepackage{caption}
+% \DeclareCaptionFont{white}{\color{white}}
+% \DeclareCaptionFormat{listing}
+%         {\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}
+%         {\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+% \captionsetup[lstlisting]{
+%         format=listing,
+%         labelfont=white,
+%         textfont=white,
+%         singlelinecheck=false,
+%         margin=0pt,
+%         font={bf,footnotesize}}
