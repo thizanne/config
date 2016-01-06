@@ -94,3 +94,4 @@
  'after-init-hook
  'global-company-mode
  )
+(put 'downcase-region 'disabled nil)
