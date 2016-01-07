@@ -1,5 +1,6 @@
 (require 'org-install)
 (require 'ox-latex)
+(require 'ox-bibtex)
 
 ;; Global conf
 
@@ -19,6 +20,7 @@
    (ocaml . t)
    (python . t)
    (sh . t)
+   (latex . t)
    ))
 
 ;;;; Don't ask before evaluating
