@@ -87,6 +87,11 @@
 "^\\(\\(Show\\)\\|\\(Locate\\)\\|\\(Theorem\\)\\|\\(Lemma\\)\\|\\(Remark\\)\\|\\(Fact\\)\\|\\(Corollary\\)\\|\\(Proposition\\)\\|\\(Definition\\)\\|\\(Let\\)\\|\\(Fixpoint\\)\\|\\(CoFixpoint\\)\\)")
  '(proof-tree-navigation-command-regexp "^\\(Focus\\)\\|\\(Unfocus\\)")
  '(proof-tree-show-sequent-command (quote coq-show-sequent-command))
+ '(safe-local-variable-values
+(quote
+ ((org-latex-listings . listings)
+  (org-latex-pdf-process . latexmk)
+  (org-latex-pdf-process . "latexmk -gg -pdf -bibtex %f"))))
  '(typerex-font-lock-symbols t)
  '(typerex-library-path "/usr/lib/ocaml"))
 (custom-set-faces
