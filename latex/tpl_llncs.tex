@@ -5,26 +5,26 @@
 \usepackage{enumerate}
 \usepackage[british]{babel}
 \usepackage{multicol}
-\usepackage{geometry}
-\usepackage{ifpdf}
+%\usepackage{geometry}
+%\usepackage{ifpdf}
 \usepackage{graphicx}
 %\usepackage{proof}
 %\usepackage[all]{xy}
 \usepackage{mathrsfs}
 \usepackage{mathpartir}
-%\usepackage{unicode-math}
+\usepackage{unicode-math}
 \usepackage{stmaryrd}
-\usepackage{cmll}
+%\usepackage{cmll} %% fonts for linear logic
 \usepackage{syntax}
 \usepackage{tikz}
 \usepackage{color}
-%\usepackage{minted}
+\usepackage{listings}
 \usepackage{inconsolata}
 \usepackage{galois}
 % \usepackage{bussproofs} %% Use this for proofs
 
 %\setmainfont[Mapping=tex-text,Ligatures=Common]{Linux Libertine O}
-%\setmonofont[Scale=0.8]{Inconsolata}
+\setmonofont[Scale=0.8]{Inconsolata}
 %\setmathfont{[Asana-Math]}
 
 \newcommand{\figref}[1]{\figurename~\ref{#1}}
@@ -42,6 +42,22 @@
         menucolor=hyperlinkscolor,
         urlcolor=hyperlinkscolor}
 
+\lstset{ %
+    float=t,
+    frame=single,
+    keepspaces=true,
+    showstringspaces=false,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\bfseries\color{green!40!black},
+    commentstyle=\color{gray!40!black},
+    identifierstyle=\color{blue},
+    stringstyle=\color{orange},
+}
+
+% make listings float globally
+\makeatletter
+\let\lst@floatdefault\lst@float
+\makeatother
 
 % Style for BNF grammars
 % Non terminal symbols in italic
