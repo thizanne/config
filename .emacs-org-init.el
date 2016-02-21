@@ -77,9 +77,10 @@
  'org-latex-classes
  '("llncs"
    "\\documentclass\{llncs\}
-    \\input\{$HOME/latex/tpl_llncs.tex\}
-    \[NO-DEFAULT-PACKAGES\]
-    \[NO-PACKAGES\]"
+\\usepackage{import}
+\\import\{$HOME/latex/}{tpl_llncs.tex\}
+\[NO-DEFAULT-PACKAGES\]
+\[NO-PACKAGES\]"
    ("\\section\{%s\}" . "\\section*\{%s\}")
    ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
    ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
