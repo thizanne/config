@@ -1,5 +1,5 @@
 Config {
-         font = "xft:DejaVu Sans-8",
+         font = "xft:DejaVu Sans-10",
          bgColor = "white",
          fgColor = "black",
          position = Top,

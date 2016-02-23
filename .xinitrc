@@ -1,6 +1,6 @@
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
 DEFAULT_SESSION=xmonad
-xrdb -load .Xdefaults
+xrdb -load .Xresources
 urxvtd -q -o -f &
 xbindkeys &
 setxkbmap -layout fr -option ctrl:swapcaps &
