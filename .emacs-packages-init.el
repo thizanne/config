@@ -56,8 +56,8 @@
 
 ;; erlang
 
-(require 'erlang-start)
-(require 'erlang-flymake)
+;; (require 'erlang-start)
+;; (require 'erlang-flymake)
 
 (add-to-list 'auto-mode-alist '("\\.erl" . erlang-mode))
 
@@ -110,14 +110,6 @@
 ;;   ;;; reset selection
 ;;   (define-key map (kbd "C-c") 'zlc-reset)
 ;;   )
-
-;; auto-complete
-
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "/usr/share/emacs/site-lisp/auto-complete/ac-dict")
-(ac-config-default)
-(setq ac-auto-start nil)
-(ac-set-trigger-key "TAB")
 
 ;; pkgbuild
 
