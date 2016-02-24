@@ -1,17 +1,15 @@
 # Increase volume
-"amixer set Master playback 1dB+"
-    m:0x0 + c:123
-    Mod2 + XF86AudioRaiseVolume
+"sh -c 'pamixer --unmute; pamixer --increase 5'"
+    XF86AudioRaiseVolume
 
 # Decrease volume
-"amixer set Master playback 1dB-"
-    m:0x0 + c:122
-    Mod2 + XF86AudioLowerVolume
+"pamixer --decrease 5"
+    XF86AudioLowerVolume
 
 # Toggle volume
-"amixer set Master playback toggle"
+"pamixer -t"
     m:0x10 + c:121
-    Mod2 + XF86AudioMute
+    XF86AudioMute
 
 # Increase brightness
 "brightness up"
