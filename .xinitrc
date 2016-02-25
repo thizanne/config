@@ -9,8 +9,8 @@ numlockx &
 xsetroot -cursor_name left_ptr &
 
 trayer --edge top --align right --SetDockType true --alpha 0 \
-            --SetPartialStrut true --expand true --tint 0xffffff \
-            --transparent true --height 17 --widthtype request --margin 160 &
+            --SetPartialStrut true --expand true --tint 0x002b36 \
+            --transparent true --height 40 --widthtype request --margin 400 &
 
 feh --bg-center ~/.xmonad/wallpaper.jpg &
 xmodmap ~/.xmodmap &
