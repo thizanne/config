@@ -1,5 +1,5 @@
 # Increase volume
-"sh -c 'pamixer --unmute; pamixer --increase 5'"
+"pamixer --unmute; pamixer --increase 5"
     XF86AudioRaiseVolume
 
 # Decrease volume
@@ -7,9 +7,13 @@
     XF86AudioLowerVolume
 
 # Toggle volume
-"pamixer -t"
+"pamixer --toggle-mute"
     m:0x10 + c:121
     XF86AudioMute
+
+# Toggle Microphone mute
+"pamixer --source 1 --toggle-mute"
+    XF86AudioMicMute
 
 # Increase brightness
 "brightness up"
@@ -20,7 +24,6 @@
 "brightness down"
     m:0x10 + c:232
     Mod2 + XF86MonBrightNessDown
-
 
 # Takes screenshot
 "scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
