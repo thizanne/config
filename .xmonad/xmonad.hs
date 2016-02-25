@@ -19,8 +19,8 @@ myWorkspaces = with_greek ["Trivia","Web","Mail","Chat"]
               where alphabeta =
                         ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι"]
 
-myNormalBorderColor  = "#777777"
-myFocusedBorderColor = "white"
+myNormalBorderColor  = "#7c7c7c"
+myFocusedBorderColor = "#93a1a1"
 
 shconf = defaultXPConfig {
            borderColor = "#333333",
@@ -106,10 +106,10 @@ myConfig = azertyConfig {
            }
 
 myPP = xmobarPP {
-         ppHidden  = xmobarColor "#444444" "",
-         ppCurrent = xmobarColor "#aaaaaa" "",
-         ppTitle   = xmobarColor "#dd0000" "",
-         ppLayout  = xmobarColor "#fbb117" ""
+--       ppHidden  = xmobarColor "#444444" "",
+         ppCurrent = xmobarColor "#93a1a1" "",
+         ppTitle   = xmobarColor "#93a1a1" "",
+         ppLayout  = xmobarColor "#657b83" ""
        }
 
 toggleStrutsKey XConfig { XMonad.modMask = modMask } = (modMask, xK_b)
