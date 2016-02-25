@@ -7,7 +7,7 @@ Xft.dpi: 170
 /* urxvt */
 URxvt.buffered : true
 URxvt.depth : 32
-URxvt.font : xft:Inconsolata:size=15, xft:DejaVuSansMono:size=15
+URxvt.font : xft:Inconsolata:size=15, xft:DejaVuSansMono:size=15, xft:Symbola:size=15
 URxvt.letterSpace : -1
 URxvt.scrollBar : false
 !URxvt.transparent : true
