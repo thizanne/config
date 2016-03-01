@@ -15,7 +15,7 @@ URxvt.scrollBar : false
 !URxvt.tint : #002b36
 URxvt.perl-ext : default,url-select,selection-to-clipboard
 URxvt.keysym.Mod4-u : perl:url-select:select_next
-URxvt.url-select.launcher : firefox
+URxvt.url-select.launcher : xdg-open
 URxvt.url-select.underline : true
 URxvt.intensityStyles : false
 Xcursor.theme: Vanilla-DMZ
