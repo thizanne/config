@@ -13,7 +13,7 @@ URxvt.scrollBar : false
 !URxvt.transparent : true
 !URxvt.shading : 20 ! transparent : 100; opaque : 0
 !URxvt.tint : #002b36
-URxvt.perl-ext : default,url-select
+URxvt.perl-ext : default,url-select,selection-to-clipboard
 URxvt.keysym.Mod4-u : perl:url-select:select_next
 URxvt.url-select.launcher : firefox
 URxvt.url-select.underline : true
