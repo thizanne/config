@@ -16,10 +16,6 @@ export GDK_USE_XFT=0
 export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
 
-# Gnome Keyring
-eval $(gnome-keyring-daemon --start --components=ssh 2>/dev/null)
-export SSH_AUTH_SOCK
-
 # Raccourcis clavier
 bindkey -e
 
@@ -121,8 +117,6 @@ alias yoplait='yaourt -Syyua --noconfirm'
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
 
-
-
 # Comportement "normal" des touches
 case $TERM in
     screen|linux)
@@ -145,3 +139,17 @@ bindkey -e "[3~" vi-delete-char
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 eval `opam config env`
+
+# Start ssh-agent, and makes sure only one such process runs
+# Then add keys to the cache if not present
+if ! pgrep -u $USER ssh-agent > /dev/null; then
+    ssh-agent > ~/.ssh-agent-thing
+fi
+if [[ "$SSH_AGENT_PID" == "" ]]; then
+    eval $(<~/.ssh-agent-thing)
+fi
+
+ssh-add -l > /dev/null || ssh-add
+
+# Start X on login in TTY 1
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
