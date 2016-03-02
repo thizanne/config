@@ -21,8 +21,9 @@
 (add-hook 'caml-mode-hook 'merlin-mode t)
 (add-hook 'typerex-mode-hook 'merlin-mode t)
 
-;;; Make company aware of merlin
+;;; Auto-completion
 (add-to-list 'company-backends 'merlin-company-backend)
+(setq merlin-completion-with-doc t)
 
 (setq merlin-command 'opam)
 
