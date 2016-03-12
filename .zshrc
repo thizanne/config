@@ -140,6 +140,9 @@ bindkey -e "[3~" vi-delete-char
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 eval `opam config env`
 
+# Gem configuration
+PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
+
 # Start ssh-agent, and makes sure only one such process runs
 # Then add keys to the cache if not present
 if ! pgrep -u $USER ssh-agent > /dev/null; then
