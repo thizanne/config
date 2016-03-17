@@ -16,12 +16,12 @@
     XF86AudioMicMute
 
 # Increase brightness
-"brightness up"
+"xbacklight -inc 10"
     m:0x10 + c:233
     Mod2 + XF86MonBrightNessUp
 
 # Decrease brightness
-"brightness down"
+"xbacklight -dec 10"
     m:0x10 + c:232
     Mod2 + XF86MonBrightNessDown
 
