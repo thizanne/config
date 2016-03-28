@@ -1,3 +1,7 @@
+;; magit
+
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;; opam
 
 ;; ;; To automatically add opam emacs directory to the load-path
