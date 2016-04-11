@@ -44,6 +44,7 @@
 (global-set-key (kbd "C-c ,") 'uncomment-region)
 (global-set-key (kbd "M-o") 'next-multiframe-window)
 (global-set-key (kbd "M-i") 'previous-multiframe-window)
+(global-set-key (kbd "C-c g") 'magit-status)
 
 ;; window look
 
