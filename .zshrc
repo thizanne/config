@@ -89,7 +89,7 @@ function cds() {
 
 alias dup='urxvtc &' # To spawn urxvt in the same dir
 
-alias ls='ls -FLh'
+alias ls='ls -FLh --literal'
 alias l='/bin/ls'
 alias l1='ls -F1'
 alias la='ls -FhA'
