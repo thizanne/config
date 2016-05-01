@@ -63,8 +63,8 @@ Xcursor.theme: Vanilla-DMZ
 #define S_cyan          #2aa198
 #define S_green         #859900
 
-*background:            S_base03
-*foreground:            S_base00
+urxvt*background:       S_base03
+urxvt*foreground:       S_base00
 *cursorColor:           S_base1
 *pointerColorBackground:S_base01
 *pointerColorForeground:S_base1
