@@ -12,6 +12,7 @@ SAVEHIST=1000
 setopt hist_ignore_space
 setopt appendhistory
 
+export WORDCHARS='' # Do not treat /a/path/with/slashes as a single word
 export GDK_USE_XFT=0
 export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
@@ -56,7 +57,7 @@ setopt auto_pushd
 # N'envoie pas de "HUP" aux jobs qui tournent quand le shell se ferme
 unsetopt hup
 # Expressions régulières dans les globs à la bash...
-setopt extendedglob
+# setopt extendedglob
 
 # Prompt
 autoload -U promptinit
