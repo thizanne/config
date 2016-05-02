@@ -78,16 +78,6 @@ esac
 
 # Alias
 
-function mdir () {
-    mkdir $1
-    cd $1
-}
-
-function cds() {
-    cd $1
-    ls
-}
-
 alias dup='urxvtc &' # To spawn urxvt in the same dir
 
 alias ls='ls -FLh --literal'
@@ -100,44 +90,22 @@ alias lla='ls -Fhla'
 alias rm='rm --preserve-root'
 alias cd..='cd ..'
 alias df='df -h'
-alias ggrep='grep 2>/dev/null'
+alias du='du -h'
 alias s='sudo -E'
 alias ss='sudo -sE'
 
 alias halt='systemctl poweroff'
 alias reboot='systemctl reboot'
-alias dhcpcd='sudo dhcpcd'
 
-alias am='alsamixer'
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
 alias emacs='emacsclient.sh'
 alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
-alias plow='plow -m'
 alias vba='VisualBoyAdvance'
 alias yoplait='yaourt -Syyua --noconfirm'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
-
-# Comportement "normal" des touches
-case $TERM in
-    screen|linux)
-        bindkey -e "^[[1~" beginning-of-line
-        bindkey -e "^[[4~" end-of-line
-        bindkey -e "^[[7~" beginning-of-line
-        bindkey -e "^[[8~" end-of-line
-
-        ;;
-
-    *)
-        bindkey -e "OH" beginning-of-line
-        bindkey -e "OF" end-of-line
-        bindkey -e "^[[7~" beginning-of-line
-        bindkey -e "^[[8~" end-of-line
-        ;;
-esac
-bindkey -e "[3~" vi-delete-char
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
