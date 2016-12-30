@@ -26,6 +26,6 @@
     Mod2 + XF86MonBrightNessDown
 
 # Takes screenshot
-"scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
-    m:0x10 + c:107
-    Mod2 + Print
+# "scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
+#    m:0x10 + c:107
+#    Mod2 + Print
