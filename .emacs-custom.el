@@ -89,7 +89,9 @@
  '(proof-tree-show-sequent-command (quote coq-show-sequent-command))
  '(safe-local-variable-values
 (quote
- ((org-latex-listings . listings)
+ ((org-latex-pdf-process "latexmk -gg -pdf -bibtex %f")
+  (org-latex-pdf-process . "latexmk -gg -pdf -bibtex")
+  (org-latex-listings . listings)
   (org-latex-pdf-process . latexmk)
   (org-latex-pdf-process . "latexmk -gg -pdf -bibtex %f"))))
  '(typerex-font-lock-symbols t)
