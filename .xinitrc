@@ -1,5 +1,9 @@
 export GTK2_RC_FILES=$HOME/.gtkrc-2.0
 DEFAULT_SESSION=xmonad
+
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
+
 xrdb -load .Xresources
 urxvtd -q -o -f &
 xbindkeys &
@@ -13,6 +17,7 @@ trayer --edge top --align right --SetDockType true --alpha 0 \
             --transparent true --height 40 --widthtype request --margin 400 &
 
 feh --bg-center ~/.xmonad/wallpaper.jpg &
+nm-applet &
 xmodmap ~/.xmodmap &
 
 exec xmonad
