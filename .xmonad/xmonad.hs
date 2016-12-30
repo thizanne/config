@@ -1,6 +1,7 @@
 import Data.Monoid
 import System.Exit
 import XMonad
+import XMonad.Util.Dmenu
 import XMonad.Actions.SpawnOn
 import XMonad.Layout.PerWorkspace
 import XMonad.Config.Azerty
@@ -26,13 +27,18 @@ shconf = defaultXPConfig {
            borderColor = "#333333",
            bgColor     = "#ffffff",
            bgHLight    = "#aaaaaa",
-           fgColor     = "#333333"
+           fgColor     = "#333333",
+           font        = "xft:inconsolata-12:antialias=true",
+           height      = 35
 }
+
+screenshot_command = "scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
     M.fromList $ [
           ((modm,               xK_Return   ), spawn $ XMonad.terminal conf),
           ((modm,               xK_p        ), shellPrompt shconf),
+          ((modm,               xK_o        ), spawn "dmenu_run -b"),
           ((modm .|. shiftMask, xK_c        ), kill),
           ((modm,               xK_space    ), sendMessage NextLayout),
           ((modm .|. shiftMask, xK_space    ), setLayout $ XMonad.layoutHook conf),
@@ -55,12 +61,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           ((modm              , xK_Left     ), spawn "mpc prev"),
           ((modm              , xK_Up       ), spawn "mpc play"),
           ((modm              , xK_Down     ), spawn "mpc pause"),
-          ((modm .|. shiftMask, xK_l        ), spawn "slock")
+          ((modm .|. shiftMask, xK_l        ), spawn "slock"),
+          ((modm              , xK_s        ), spawn screenshot_command)
          ]
          ++
          [((m .|. modm, k), windows $ f i) |
           (i, k) <- zip (XMonad.workspaces conf) [0x26,0xe9,0x22,0x27,0x28,0x2d,0xe8,0x5f,0xe7,0xe0],
           (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+         ++
+         [((modm .|. m, key), screenWorkspace sc >>= flip whenJust (windows . f)) |
+          (key, sc) <- zip [xK_a, xK_z, xK_e] [0..],
+          (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) =
     M.fromList $ [
