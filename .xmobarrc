@@ -5,7 +5,7 @@ Config {
        , position = Top
        , lowerOnStart = True
        , commands =
-           [ Run MPD ["-t", "<state>: <artist> - <title>"] 10
+           [ Run Com "mpd_status.py" [] "mpd" 10
            , Run Date "%a %d %b - %k:%M" "date" 600
            , Run Com "mpd_status.py" [] "mpd" 10
            , Run StdinReader
