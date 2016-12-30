@@ -32,8 +32,9 @@
 (setq org-latex-minted-options
       '(("frame" "none")
         ("fontsize" "\\small")
-        ("linenos" "true")
+;;        ("linenos" "true")
         ("mathescape" "true")
+        ("escapeinside" "||")
         ))
 
 ;; latex conf
@@ -77,8 +78,6 @@
  'org-latex-classes
  '("llncs"
    "\\documentclass\{llncs\}
-\\usepackage{import}
-\\import\{$HOME/latex/}{tpl_llncs.tex\}
 \[NO-DEFAULT-PACKAGES\]
 \[NO-PACKAGES\]"
    ("\\section\{%s\}" . "\\section*\{%s\}")
@@ -102,7 +101,7 @@
 ;; beamer specific conf
 
 (setq org-beamer-frame-level 3)
-(setq org-beamer-theme "Darmstadt")
+(setq org-beamer-theme "metropolis")
 
 ;; reftex
 
