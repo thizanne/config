@@ -79,6 +79,8 @@
 (setq set-mark-command-repeat-pop t)
 (setq vc-follow-symlinks t)
 
+(fset 'yes-or-no-p 'y-or-n-p)
+
 ;; whitespace
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
