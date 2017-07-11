@@ -96,3 +96,4 @@
 ;; auto fill
 
 (setq fill-nobreak-predicate '(fill-french-nobreak-p))
+(put 'downcase-region 'disabled nil)
