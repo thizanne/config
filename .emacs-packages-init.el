@@ -44,16 +44,22 @@
 
 ;; tuareg/typerex
 
-(autoload 'typerex-mode "typerex" "Major mode for editing Caml code" t)
 (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
 (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
 
 (add-to-list 'auto-mode-alist '("\\.ml[iylp]?" . tuareg-mode))
+(add-to-list 'auto-mode-alist '("\\.eliom[iylp]?" . tuareg-mode))
 (add-to-list 'interpreter-mode-alist '("ocamlrun" . tuareg-mode))
 (add-to-list 'interpreter-mode-alist '("ocaml" . tuareg-mode))
 
 (setq ocp-server-command "/usr/bin/ocp-wizard")
 (setq ocp-theme "tuareg-like")
+
+;; utop
+
+(autoload 'utop "utop" "Toplevel for OCaml" t)
+(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
+(add-hook 'tuareg-mode-hook 'utop-minor-mode)
 
 ;; auctex
 
