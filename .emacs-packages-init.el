@@ -1,3 +1,14 @@
+;; anzu
+
+(require 'anzu)
+(global-anzu-mode t)
+
+(set-face-attribute
+ 'anzu-mode-line nil
+ :foreground "yellow"
+ :weight 'bold
+ )
+
 ;; magit
 
 (global-set-key (kbd "C-x g") 'magit-status)
