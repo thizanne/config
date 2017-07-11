@@ -23,6 +23,9 @@
  '(org-latex-pdf-process
    (quote
     ("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")))
+ '(package-selected-packages
+   (quote
+    (nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode org-plus-contrib org mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme)))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
  '(proof-electric-terminator-enable t)
