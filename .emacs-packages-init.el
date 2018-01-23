@@ -16,11 +16,11 @@
 ;; opam
 
 ;; ;; To automatically add opam emacs directory to the load-path
-;; (setq opam-share
-;; (substring
-;; (shell-command-to-string "opam config var share 2> /dev/null")
-;; 0 -1))
-(setq opam-share "~/.opam/4.03.0/share")
+(setq opam-share
+      (substring
+       (shell-command-to-string "opam config var share 2> /dev/null")
+       0 -1))
+;; (setq opam-share "~/.opam/4.04.2/share")
 (add-to-list 'load-path (concat opam-share "/emacs/site-lisp"))
 
 ;; ocp-indent
@@ -60,6 +60,14 @@
 (autoload 'utop "utop" "Toplevel for OCaml" t)
 (autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
 (add-hook 'tuareg-mode-hook 'utop-minor-mode)
+
+(setq utop-command "utop -emacs -I _build")
+
+(add-hook
+ 'tuareg-mode-hook
+ (lambda ()
+   (local-set-key (kbd "C-c C-e") 'utop-eval-phrase))
+ )
 
 ;; auctex
 
