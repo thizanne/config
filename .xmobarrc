@@ -1,5 +1,9 @@
 Config {
-         font = "xft:inconsolata-15:antialias=true, xft:DejaVu Sans-10, xft:Noto Sans CJK SC:size=10:antialias=true"
+       font = "xft:inconsolata-15:antialias=true"
+       , additionalFonts =
+       [ "xft:DejaVu Sans-14"
+       , "xft:Noto Sans CJK SC:size=10:antialias=true"
+       ]
        , bgColor = "#002b36"
        , fgColor = "#657b83"
        , position = Top
@@ -14,12 +18,12 @@ Config {
                  , "--Low", "30" -- units: %
                  , "--low", "#dc322f"
                  , "--" -- battery specific options
-                        -- discharging
-                 , "--off-icon-pattern", "<fc=#b58900> ⚡ <left>% (<timeleft>) </fc>"
+                 -- discharging
+                 , "--off-icon-pattern", "<fc=#b58900><fn=1> ⚡ </fn><left>% (<timeleft>) </fc>"
                  -- charging
-                 , "--on-icon-pattern", "<fc=#859900> ⚡ <left>% </fc>"
+                 , "--on-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn><left>% </fc>"
                  -- charged
-                 , "--idle-icon-pattern", "<fc=#859900> ⚡ </fc>"
+                 , "--idle-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn></fc>"
                  ] 30
            ]
        , sepChar = "%"
