@@ -1,8 +1,9 @@
 Config {
        font = "xft:inconsolata-15:antialias=true"
        , additionalFonts =
-       [ "xft:DejaVu Sans-14"
+       [ "xft:DejaVu Sans-13"
        , "xft:Noto Sans CJK SC:size=10:antialias=true"
+       , "xft:Symbola:size=13"
        ]
        , bgColor = "#002b36"
        , fgColor = "#657b83"
@@ -19,9 +20,9 @@ Config {
                  , "--low", "#dc322f"
                  , "--" -- battery specific options
                  -- discharging
-                 , "--off-icon-pattern", "<fc=#b58900><fn=1> ⚡ </fn><left>% (<timeleft>) </fc>"
+                 , "--off-icon-pattern", "<fc=#b58900><fn=3> 🔋 </fn><left>% (<timeleft>) </fc>"
                  -- charging
-                 , "--on-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn><left>% </fc>"
+                 , "--on-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn><left>% (<timeleft>) </fc>"
                  -- charged
                  , "--idle-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn></fc>"
                  ] 30
