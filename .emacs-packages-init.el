@@ -101,6 +101,7 @@
 
 ;; haskell
 
+(add-to-list 'auto-mode-alist '("\\.xmobarrc" . haskell-mode))
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
 
