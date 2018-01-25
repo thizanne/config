@@ -1,5 +1,8 @@
 Config {
-       font = "xft:inconsolata-15:antialias=true"
+       -- fallback to DejaVu for greek chars
+       font = "xft:inconsolata-15:antialias=true,xft:DejaVu Sans-13"
+       -- additional fonts when explicitely needed
+       -- fallback doesn't work for battery icons (displays a ▯)
        , additionalFonts =
        [ "xft:DejaVu Sans-13"
        , "xft:Noto Sans CJK SC:size=10:antialias=true"
