@@ -19,7 +19,15 @@ if state == "Stopped":
 else:
     playlist = client.playlistinfo()
     song = playlist[int(status["song"])]
-    title = song["title"]
-    artist = song["artist"]
+
+    try:
+        title = song["title"]
+    except KeyError:
+        title = song["file"]
+
+    try:
+        artist = song["artist"]
+    except:
+        artist = "No artist"
 
     print("%s: %s - %s" % (state, artist, title))
