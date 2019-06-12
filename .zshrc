@@ -78,6 +78,7 @@ esac
 
 # Alias
 
+alias diff='diff --color=auto'
 alias dup='urxvtc &' # To spawn urxvt in the same dir
 
 alias ls='ls -FLh --literal'
