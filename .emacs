@@ -43,6 +43,12 @@
  '("org" . "http://orgmode.org/elpa/")
  t)
 
+;; For term-keys
+(add-to-list
+ 'package-archives
+ '("cselpa" . "https://elpa.thecybershadow.net/packages/")
+ t)
+
 ;; global key bindings
 
 (global-set-key (kbd "C-v") 'scroll-up-line)

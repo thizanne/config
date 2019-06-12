@@ -1,3 +1,7 @@
+;; term-keys
+(require 'term-keys)
+(term-keys-mode t)
+
 ;; anzu
 
 (require 'anzu)
