@@ -17,6 +17,10 @@
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; dune
+(autoload 'lisp-mode "lisp" "Major mode for editing Lisp code" t)
+(add-to-list 'auto-mode-alist '("dune" . lisp-mode))
+
 ;; opam
 
 ;; ;; To automatically add opam emacs directory to the load-path
