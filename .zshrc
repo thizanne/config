@@ -115,14 +115,14 @@ eval `opam config env`
 # Gem configuration
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
-# Start ssh-agent, and makes sure only one such process runs
-# Then add keys to the cache if not present
-if ! pgrep -u $USER ssh-agent > /dev/null; then
-    ssh-agent > ~/.ssh-agent-thing
-fi
-if [[ "$SSH_AGENT_PID" == "" ]]; then
-    eval $(<~/.ssh-agent-thing)
-fi
+# # Start ssh-agent, and makes sure only one such process runs
+# # Then add keys to the cache if not present
+# if ! pgrep -u $USER ssh-agent > /dev/null; then
+#     ssh-agent > ~/.ssh-agent-thing
+# fi
+# if [[ "$SSH_AGENT_PID" == "" ]]; then
+#     eval $(<~/.ssh-agent-thing)
+# fi
 
 ssh-add -l > /dev/null || ssh-add
 
