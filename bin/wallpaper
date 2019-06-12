@@ -5,9 +5,10 @@ cp --backup=numbered "$1" ~/.xmonad 2>/dev/null
 cd ~/.xmonad
 cp -fs "${1##*/}" wallpaper.jpg
 USERXMONAD=`pwd`
+feh --bg-center ~/.xmonad/wallpaper.jpg &
 echo "xmonad wallpaper changed"
 
-cd /usr/share/slim/themes/default/
-sudo -E rm -f background.jpg
-sudo -E cp -fs "$USERXMONAD/${1##*/}" background.jpg
-echo "SLiM wallpaper changed"
+# cd /usr/share/slim/themes/default/
+# sudo -E rm -f background.jpg
+# sudo -E cp -fs "$USERXMONAD/${1##*/}" background.jpg
+# echo "SLiM wallpaper changed"
