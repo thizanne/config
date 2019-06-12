@@ -21,7 +21,7 @@ myWorkspaces = with_greek ["Trivia","Web","Mail","Chat"]
                         ["α", "β", "γ", "δ", "ε", "ζ", "η", "θ", "ι"]
 
 myNormalBorderColor  = "#7c7c7c"
-myFocusedBorderColor = "#93a1a1"
+myFocusedBorderColor = "#859900"
 
 shconf = defaultXPConfig {
            borderColor = "#333333",
