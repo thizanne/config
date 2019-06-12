@@ -2,6 +2,11 @@
 (require 'term-keys)
 (term-keys-mode t)
 
+;; makefile
+
+;; Matches Makefile[.something]
+(add-to-list 'auto-mode-alist '("/Makefile\\(\\..*\\)?" . makefile-mode))
+
 ;; anzu
 
 (require 'anzu)
