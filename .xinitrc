@@ -7,7 +7,7 @@ xrandr --auto
 xrdb -load .Xresources
 urxvtd -q -o -f &
 xbindkeys &
-setxkbmap -layout fr -option ctrl:swapcaps &
+setxkbmap -layout fr -option ctrl:swapcaps
 numlockx &
 # xset s off &
 xsetroot -cursor_name left_ptr &
