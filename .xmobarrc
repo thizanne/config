@@ -32,5 +32,5 @@ Config {
            ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{<fc=#93a1a1>♫ %mpd%      </fc> %battery%       <fc=#93a1a1>%date%</fc>   "
+       , template = "%StdinReader% }{<fc=#93a1a1><fn=1>♫</fn> %mpd%      </fc> %battery%       <fc=#93a1a1>%date%</fc>   "
        }
