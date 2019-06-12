@@ -1,6 +1,8 @@
 (require 'org-install)
 (require 'ox-latex)
+(require 'ox-beamer)
 (require 'ox-bibtex)
+(require 'ox-extra)
 
 ;; Global conf
 
@@ -9,6 +11,10 @@
 (setq org-log-done t)
 (setq org-src-fontify-natively t)
 (add-hook 'org-mode-hook 'turn-on-auto-fill)
+
+;; Allow :ignore: tag to ignore a heading at export but not its
+;; contents
+(ox-extras-activate '(ignore-headlines))
 
 ;; Babel
 
@@ -19,7 +25,7 @@
  '(
    (ocaml . t)
    (python . t)
-   (sh . t)
+   (shell . t)
    (latex . t)
    ))
 
@@ -43,6 +49,8 @@
  org-latex-pdf-process
  '("latexmk -gg -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")
  )
+
+(setq org-export-headline-levels 5)
 
 ;; latex classes
 
@@ -89,14 +97,46 @@
 
 (add-to-list
  'org-latex-classes
- '("beamer"
-   "\\documentclass\[presentation,svgnames\]\{beamer\}
-    \\input\{/home/thibault/latex/tpl_beamer.tex\}
-    [NO-DEFAULT-PACKAGES]
-    [NO-PACKAGES]"
+ '("book"
+   "\\documentclass\{book\}
+    \\input\{tpl.tex\}
+    \[NO-DEFAULT-PACKAGES\]
+    \[NO-PACKAGES\]"
+   ("\\part\{%s\}" . "\\part*\{%s\}")
+   ("\\chapter\{%s\}" . "\\chapter*\{%s\}")
    ("\\section\{%s\}" . "\\section*\{%s\}")
    ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+   ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+   ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+   ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
    ))
+
+(add-to-list
+ 'org-latex-classes
+ '("koma-book"
+   "\\documentclass\{scrbook\}
+    \\input\{tpl.tex\}
+    \[NO-DEFAULT-PACKAGES\]
+    \[NO-PACKAGES\]"
+   ("\\part\{%s\}" . "\\part*\{%s\}")
+   ("\\chapter\{%s\}" . "\\chapter*\{%s\}")
+   ("\\section\{%s\}" . "\\section*\{%s\}")
+   ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+   ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")
+   ("\\paragraph\{%s\}" . "\\paragraph*\{%s\}")
+   ("\\subparagraph\{%s\}" . "\\subparagraph*\{%s\}")
+   ))
+
+;; (add-to-list
+;;  'org-latex-classes
+;;  '("beamer"
+;;    "\\documentclass\[presentation,svgnames\]\{beamer\}
+;;     \\input\{/home/thibault/latex/tpl_beamer.tex\}
+;;     [NO-DEFAULT-PACKAGES]
+;;     [NO-PACKAGES]"
+;;    ("\\section\{%s\}" . "\\section*\{%s\}")
+;;    ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+;;    ))
 
 ;; beamer specific conf
 
@@ -110,6 +150,9 @@
   (and (buffer-file-name)
        (file-exists-p (buffer-file-name))
        (progn
+         (setq TeX-master t)
+         (turn-on-reftex)
+         (global-auto-revert-mode t)
          (reftex-parse-all)
          (reftex-set-cite-format "[[cite:%l]]")
          )
