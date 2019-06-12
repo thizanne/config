@@ -2,6 +2,9 @@
 (require 'term-keys)
 (term-keys-mode t)
 
+;; iedit
+(require 'iedit)
+
 ;; makefile
 
 ;; Matches Makefile[.something]
@@ -79,7 +82,9 @@
 (add-hook
  'tuareg-mode-hook
  (lambda ()
-   (local-set-key (kbd "C-c C-e") 'utop-eval-phrase))
+   (local-set-key (kbd "C-c C-e") 'utop-eval-phrase)
+   (local-set-key (kbd "C-;") 'merlin-iedit-occurrences)
+   )
  )
 
 ;; auctex
