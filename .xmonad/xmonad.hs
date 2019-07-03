@@ -6,6 +6,7 @@ import XMonad.Actions.SpawnOn
 import XMonad.Layout.PerWorkspace
 import XMonad.Config.Azerty
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Prompt
 import XMonad.Prompt.Shell
@@ -115,6 +116,7 @@ myConfig =
     , mouseBindings      = myMouseBindings
     , layoutHook         = myLayout
     , manageHook         = myManageHook
+    , startupHook        = setWMName "LG3D" -- For Swing GUI applications
     }
 
 myPP = xmobarPP {
