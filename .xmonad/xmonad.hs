@@ -105,7 +105,7 @@ myManageHook = composeAll $
 main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
 
 myConfig = azertyConfig {
-        terminal           = "urxvtc",
+        terminal           = myTerminal,
         modMask            = myModMask,
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
