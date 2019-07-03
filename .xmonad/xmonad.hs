@@ -104,17 +104,18 @@ myManageHook = composeAll $
 
 main = xmonad =<< statusBar "xmobar" myPP toggleStrutsKey myConfig
 
-myConfig = azertyConfig {
-        terminal           = myTerminal,
-        modMask            = myModMask,
-        workspaces         = myWorkspaces,
-        normalBorderColor  = myNormalBorderColor,
-        focusedBorderColor = myFocusedBorderColor,
-        keys               = myKeys,
-        mouseBindings      = myMouseBindings,
-        layoutHook         = myLayout,
-        manageHook         = myManageHook
-           }
+myConfig =
+    azertyConfig
+    { terminal           = myTerminal
+    , modMask            = myModMask
+    , workspaces         = myWorkspaces
+    , normalBorderColor  = myNormalBorderColor
+    , focusedBorderColor = myFocusedBorderColor
+    , keys               = myKeys
+    , mouseBindings      = myMouseBindings
+    , layoutHook         = myLayout
+    , manageHook         = myManageHook
+    }
 
 myPP = xmobarPP {
 --       ppHidden  = xmobarColor "#444444" "",
