@@ -131,3 +131,6 @@ ssh-add -l > /dev/null || ssh-add
 
 # autojump
 source /etc/profile.d/autojump.sh
+
+# Antialiasing for swing applications
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
