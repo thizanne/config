@@ -103,10 +103,10 @@ alias emacs='emacsclient.sh'
 alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
 alias vba='VisualBoyAdvance'
-alias yoplait='yaourt -Syyua --noconfirm'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
+alias sshg='ssh tsuzanne@gnb-tsuzanne-deb9-64.mathworks.com -t zsh'
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -115,19 +115,14 @@ eval `opam config env`
 # Gem configuration
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
 
-# # Start ssh-agent, and makes sure only one such process runs
-# # Then add keys to the cache if not present
-# if ! pgrep -u $USER ssh-agent > /dev/null; then
-#     ssh-agent > ~/.ssh-agent-thing
-# fi
-# if [[ "$SSH_AGENT_PID" == "" ]]; then
-#     eval $(<~/.ssh-agent-thing)
-# fi
-
-ssh-add -l > /dev/null || ssh-add
-
 # Start X on login in TTY 1
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
 # autojump
 source /etc/profile.d/autojump.sh
+
+# Antialiasing for swing applications
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+
+# Polyspace
+path+=/usr/local/Polyspace/R2019a/polyspace/bin
