@@ -1,22 +1,18 @@
-export GTK2_RC_FILES=$HOME/.gtkrc-2.0
-DEFAULT_SESSION=xmonad
-
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
-
 xrdb -load .Xresources
+xrdb -nocpp -merge .Xkeycodes
 urxvtd -q -o -f &
 xbindkeys &
 setxkbmap -layout fr -option ctrl:swapcaps
 numlockx &
-# xset s off &
+xset s off &
 xsetroot -cursor_name left_ptr &
 
+# killall trayer
 trayer --edge top --align right --SetDockType true --alpha 0 \
             --SetPartialStrut true --expand true --tint 0x002b36 \
-            --transparent true --height 40 --widthtype request --margin 400 &
+            --transparent true --height 40 --widthtype request --margin 700 &
 
-feh --bg-center ~/.xmonad/wallpaper.jpg &
+feh --bg-fill ~/.xmonad/wallpaper.jpg &
 nm-applet &
 xmodmap ~/.xmodmap &
 
