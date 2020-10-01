@@ -96,7 +96,7 @@ myManageHook = composeAll $
                [className =? c --> doFloat | c <- myFloats]
                ++
                [
-                className =? "Firefox"     --> doF (W.shift "Web"),
+                className =? "firefox"     --> doF (W.shift "Web"),
                 className =? "Thunderbird" --> doF (W.shift "Mail"),
                 className =? "Skype"       --> doF (W.shift "Chat")
                ]
