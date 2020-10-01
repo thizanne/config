@@ -1,9 +1,9 @@
 # Increase volume
-"pamixer --unmute; pamixer --increase 5"
+"pamixer --unmute; pamixer --increase 5 --allow-boost"
     XF86AudioRaiseVolume
 
 # Decrease volume
-"pamixer --decrease 5"
+"pamixer --decrease 5 --allow-boost"
     XF86AudioLowerVolume
 
 # Toggle volume
