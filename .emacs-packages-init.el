@@ -131,7 +131,7 @@
 
 ;; ProofGeneral
 
-(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+;; TODO: load this properly when installed as emacs package :)
 
 ;; cc-mode
 
@@ -208,8 +208,8 @@
 
 ;; color-theme
 
-(require 'color-theme)
-(color-theme-initialize)
+;; (require 'color-theme)
+;; (color-theme-initialize)
 
 (add-to-list 'custom-theme-load-path "~/config/emacs-color-theme-solarized")
 (load-theme 'solarized t)
