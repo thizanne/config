@@ -14,6 +14,7 @@ import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
 myTerminal = "urxvtc"
+myTerminalExec = "urxvtc -e "
 myModMask = mod4Mask
 
 myWorkspaces = with_greek ["Trivia","Web","Mail","Chat"]
@@ -35,9 +36,12 @@ shconf = defaultXPConfig {
 
 screenshot_command = "scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
 
+ssh_gnb_command = myTerminalExec ++ "sh -c 'ssh gnb -t zsh; zsh'"
+
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
     M.fromList $ [
           ((modm,               xK_Return   ), spawn $ XMonad.terminal conf),
+          ((modm .|. controlMask, xK_Return   ), spawn ssh_gnb_command),
           ((modm,               xK_p        ), shellPrompt shconf),
           ((modm,               xK_o        ), spawn "dmenu_run -b"),
           ((modm .|. shiftMask, xK_c        ), kill),
