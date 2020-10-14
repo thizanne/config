@@ -12,7 +12,11 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(frame-background-mode (quote dark))
+ '(gdb-non-stop-setting nil t)
+ '(git-commit-summary-max-length 100)
  '(inhibit-startup-screen t)
+ '(message-fill-column 100)
  '(org-beamer-environments-extra
    (quote
     (("onlyenv" "O" "\\begin{onlyenv}%a" "\\end{onlyenv}"))))
@@ -31,7 +35,7 @@
     ("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f")))
  '(package-selected-packages
    (quote
-    (term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode org-plus-contrib org mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme)))
+    (helm-projectile helm gnu-elpa-keyring-update caml sml-mode company-bibtex company-c-headers company-web markdown-mode+ auctex term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode org-plus-contrib org mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme)))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
  '(proof-electric-terminator-enable t)
@@ -64,13 +68,13 @@
  '(proof-shell-end-goals-regexp "
 (dependent evars:")
  '(proof-shell-error-regexp
-   "^\\(Error:\\|Discarding pattern\\|Syntax error:\\|System Error:\\|User Error:\\|User error:\\|Anomaly[:.]\\|Toplevel input[,]\\)")
+"^\\(Error:\\|Discarding pattern\\|Syntax error:\\|System Error:\\|User Error:\\|User error:\\|Anomaly[:.]\\|Toplevel input[,]\\)")
  '(proof-shell-font-lock-keywords (quote coq-font-lock-keywords-1))
  '(proof-shell-init-cmd "Set Undo 500 . ")
  '(proof-shell-interactive-prompt-regexp "TcDebug ")
  '(proof-shell-interrupt-regexp "User Interrupt.")
  '(proof-shell-proof-completed-regexp
-   "No\\s-+more\\s-+subgoals\\.\\|Subtree\\s-proved!\\|Proof\\s-completed")
+"No\\s-+more\\s-+subgoals\\.\\|Subtree\\s-proved!\\|Proof\\s-completed")
  '(proof-shell-restart-cmd "Reset Initial.
  ")
  '(proof-shell-result-end "\372 End Pbp result \373")
@@ -93,24 +97,30 @@
  '(proof-tree-find-begin-of-unfinished-proof (quote coq-find-begin-of-unfinished-proof))
  '(proof-tree-get-proof-info (quote coq-proof-tree-get-proof-info))
  '(proof-tree-ignored-commands-regexp
-   "^\\(\\(Show\\)\\|\\(Locate\\)\\|\\(Theorem\\)\\|\\(Lemma\\)\\|\\(Remark\\)\\|\\(Fact\\)\\|\\(Corollary\\)\\|\\(Proposition\\)\\|\\(Definition\\)\\|\\(Let\\)\\|\\(Fixpoint\\)\\|\\(CoFixpoint\\)\\)")
+"^\\(\\(Show\\)\\|\\(Locate\\)\\|\\(Theorem\\)\\|\\(Lemma\\)\\|\\(Remark\\)\\|\\(Fact\\)\\|\\(Corollary\\)\\|\\(Proposition\\)\\|\\(Definition\\)\\|\\(Let\\)\\|\\(Fixpoint\\)\\|\\(CoFixpoint\\)\\)")
  '(proof-tree-navigation-command-regexp "^\\(Focus\\)\\|\\(Unfocus\\)")
  '(proof-tree-show-sequent-command (quote coq-show-sequent-command))
+ '(rtags-error-message-function (quote sb-rtags-error-message-function))
  '(safe-local-variable-values
-   (quote
-    ((org-latex-minted-options
-      ("frame" "none")
-      ("fontsize" "\\small"))
-     (org-latex-minted-options quote
-                               (("frame" "none")
-                                ("fontsize" "\\small")
-                                ("mathescape" "true")))
-     (org-latex-prefer-user-labels . t)
-     (org-latex-pdf-process "latexmk -gg -pdf -bibtex %f")
-     (org-latex-pdf-process . "latexmk -gg -pdf -bibtex")
-     (org-latex-listings . listings)
-     (org-latex-pdf-process . latexmk)
-     (org-latex-pdf-process . "latexmk -gg -pdf -bibtex %f"))))
+(quote
+ ((org-latex-minted-options
+   ("frame" "none")
+   ("fontsize" "\\small"))
+  (org-latex-minted-options quote
+                            (("frame" "none")
+                             ("fontsize" "\\small")
+                             ("mathescape" "true")))
+  (org-latex-prefer-user-labels . t)
+  (org-latex-pdf-process "latexmk -gg -pdf -bibtex %f")
+  (org-latex-pdf-process . "latexmk -gg -pdf -bibtex")
+  (org-latex-listings . listings)
+  (org-latex-pdf-process . latexmk)
+  (org-latex-pdf-process . "latexmk -gg -pdf -bibtex %f"))))
+ '(show-paren-mode t nil (paren))
+ '(show-paren-ring-bell-on-mismatch t)
+ '(show-paren-style (quote mixed))
+ '(sml-ocaml-use-default-function-keys-bindings t)
+ '(sml-program-name "/mathworks/GNB/devel/pst/utils/bin/sml")
  '(typerex-font-lock-symbols t)
  '(typerex-library-path "/usr/lib/ocaml"))
 (custom-set-faces
@@ -118,4 +128,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(proof-locked-face ((t (:background "#000001")))))
+ '(proof-locked-face ((t (:background "#000001"))))
+ '(show-paren-match ((((class color)) (:inverse-video nil :background "Turquoise"))))
+ '(woman-unknown ((t (:inherit font-lock-warning-face :foreground "red4")))))

@@ -10,6 +10,10 @@
 (setq custom-file "~/.emacs-custom.el")
 (load custom-file)
 
+;; sandboxes
+
+(load-file "//mathworks/hub/share/sbtools/emacs_setup.el")
+
 ;; package initialisation file
 
 (add-hook
@@ -84,6 +88,7 @@
 (setq standard-indent 4)
 (setq set-mark-command-repeat-pop t)
 (setq vc-follow-symlinks t)
+(setq fill-column 85) ;; Makes lines < 90 chars even with fill prefix
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -101,5 +106,6 @@
 
 ;; auto fill
 
+(setq-default fill-column 80)
 (setq fill-nobreak-predicate '(fill-french-nobreak-p))
 (put 'downcase-region 'disabled nil)

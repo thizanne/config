@@ -1,3 +1,66 @@
+(add-to-list 'load-path "/mathworks/GNB/devel/pst/admin/emacs-config")
+
+;; SML
+
+(require 'config-sml-4)
+(require 'compile-no-prompt)
+(require 'sml-ocaml-error-regexp)
+(require 'config-default)
+;; (require 'config-sml-colors)
+;; Consider paths in annot files relative to matlab/polyspace/src/polyspace_ocaml
+(add-hook
+ 'sml-mode-hook
+ '(lambda ()
+    (setq caml-types-annot-anchor
+          (expand-file-name "matlab/polyspace/src/polyspace_ocaml" (mw-anchor)))))
+
+;; (defun sml-adaptive-fill ()
+;;   ""
+;;   (looking-at "^[:blank:]*\\((\\| \\)\\* ")
+;;   (match-substitute-replacement "foo" nil nil nil 1))
+
+;; (defun sml-set-adaptive-fill-function ()
+;;   "Enable comment aware adaptive fill"
+;;   (setq-local adaptive-fill-function 'sml-adaptive-fill)
+;;   (setq-local adaptive-fill-first-line-regexp "^[:blank:]*(\\* "))
+
+;; (add-hook 'sml-mode-hook 'sml-set-adaptive-fill-function)
+
+;; (add-hook
+;;  'sml-mode-hook
+;;  '(lambda ()
+;;     (setq-local fill-prefix "* ")))
+
+;; ;; Correctly indent structures
+;; (defun my-sml-rules (orig kind token)
+;;   (pcase (cons kind token)
+;;     (`(:before . "d=")
+;;      (if (smie-rule-parent-p "structure" "signature" "functor") 2
+;;        (funcall orig kind token)))
+;;     (`(:after . "struct") 2)
+;;     (_ (funcall orig kind token))))
+
+;; (add-hook
+;;  'sml-mode-hook
+;;  (lambda ()
+;;    (add-function :around 'smie-rules-function #'my-sml-rules)))
+
+;; IL
+(require 'pst-files)
+(require 'il-mode)
+
+;; suif
+(autoload 'suif-mode "suif-mode" "Major mode for editing SUIF code" t)
+(add-to-list 'auto-mode-alist '("\\.suif" . suif-mode))
+
+;; Helm and projectile
+(require 'helm-config)
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(setq projectile-indexing-method 'alien) ;; allow using external tools for indexing
+(setq projectile-enable-caching t)
+
 ;; term-keys
 (require 'term-keys)
 (term-keys-mode t)
@@ -131,7 +194,7 @@
 
 ;; ProofGeneral
 
-(load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
+;; (load-file "/usr/share/emacs/site-lisp/ProofGeneral/generic/proof-site.el")
 
 ;; cc-mode
 
