@@ -1,8 +1,8 @@
 # Configuration zsh de Thibault Suzanne
 TERM=rxvt-unicode-256color
+export HOME=/mathworks/home/tsuzanne
 #TERM=rxvt-unicode
 PATH=${HOME}/bin:${HOME}/.cabal/bin:$PATH
-
 XDG_CONFIG_HOME=${HOME}/.config
 
 # Historique
@@ -99,6 +99,7 @@ alias halt='systemctl poweroff'
 alias reboot='systemctl reboot'
 
 alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
+alias sml='rlwrap sml'
 alias emacs='emacsclient.sh'
 alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
@@ -109,8 +110,9 @@ alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
 
 # OPAM configuration
-. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval `opam config env`
+export OPAMROOT=/opamroot
+. $OPAMROOT/opam-init/init.zsh > /dev/null 2> /dev/null || true
+eval `opam env`
 
 # Gem configuration
 PATH="$(ruby -e 'print Gem.user_dir')/bin:$PATH"
@@ -129,8 +131,64 @@ ssh-add -l > /dev/null || ssh-add
 # Start X on login in TTY 1
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 
+export PATH
+
 # autojump
-source /etc/profile.d/autojump.sh
+source /usr/share/autojump/autojump.sh
 
 # Antialiasing for swing applications
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
+
+# MathWorks setup
+
+export P4MERGE=p4merge
+
+path+=/mathworks/GNB/devel/pst/utils/bin
+export SBTOOLS_VNC_WINDOW_MGR=xmonad
+. ~/mw_zsh_setup.zsh
+
+compdef sbmake=make
+# Polyspace variables
+export pst=/mathworks/GNB/devel/pst
+export latest_job_archive=/mathworks/GNB/devel/jobarchive/Bpolyspace_core/latest_pass
+export latest_product=/mathworks/GNB/devel/jobarchive/BR2018bd/latest_pass
+export latest_pass=/mathworks/GNB/devel/jobarchive/Bpolyspace_core/latest_pass/
+export latest_polyspace=$latest_job_archive/matlab/polyspace/bin
+export latest_polyspace_btv=$latest_job_archive/matlab/test/tools/polyspace/btv
+export latest_bslvnv=/mathworks/GNB/devel/jobarchive/Bslvnv/latest_pass/matlab/polyspace/bin
+export latest_bslvnv_btv=/mathworks/GNB/devel/jobarchive/Bslvnv/latest_pass/matlab/test/tools/polyspace/btv
+export sandbox=/mathworks/GNB/devel/sandbox
+export sbs=/mathworks/devel/sbs/11/
+export devsb=/local/mw/
+
+# MathWorks path
+# tools to print intermediate files
+PATH=/mathworks/GNB/devel/pst/utils/bin/:$PATH
+# ps* tools
+PATH=/mathworks/GNB/hub/pst/PSBaT-CURRENT/bin:$PATH
+# latest polyspace
+PATH=$latest_polyspace:$PATH
+# btv
+PATH=$latest_job_archive/matlab/test/tools/polyspace/btv/:$PATH
+# Mathworks Perl
+# PATH=/mathworks/GNB/hub/Linux/glibc-2.11.3/x86_64/apps/bat/latest/bin:$PATH
+# perforce
+PATH=/usr/local/netbin:$PATH
+## Add MW Perl to the PATH
+PATH=/mathworks/GNB/hub/Linux/glibc-2.13/x86_64/apps/bat/perl/perl-5.20.2-mw-020/bin:$PATH
+
+alias mwocaml='rlwrap /local/mw/matlab/derived/glnxa64/mwocaml/bin/ocaml -I /local/mw/matlab/derived/glnxa64/mwocaml/lib/ocaml/std-lib/'
+alias psnw='polyspace -open-new-window'
+alias psbf='polyspace-bug-finder-server -sources'
+alias pscp='polyspace-code-prover-server -sources'
+alias set_latest_bpscore='export PATH=$latest_polyspace:$PATH'
+alias set_latest_bpscore_btv='export PATH=$latest_polyspace_btv:$PATH'
+alias set_latest_product='export PATH=$latest_product/matlab/polyspace/bin:$PATH'
+alias set_latest_bslvnv='export PATH=$latest_bslvnv:$PATH'
+alias set_latest_bslvnv_btv='export PATH=$latest_bslvnv_btv:$PATH'
+alias set_current_sb='export PATH=`sbroot`/matlab/polyspace/bin:`sbroot`/matlab/bin/glnxa64:$PATH'
+alias set_current_sb_btv='export PATH=`sbroot`/matlab/test/tools/polyspace/btv/:$PATH'
+alias set_dev_sb='export PATH=$devsb/matlab/polyspace/bin:$PATH'
+alias set_dev_sb_btv='export PATH=$devsb/matlab/test/tools/polyspace/btv:$PATH'
+alias core-sbs='/mathworks/GNB/devel/pst/utils/core/core-sbs'
+alias cdroot='cd `sbroot`'
