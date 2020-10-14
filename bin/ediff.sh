@@ -35,12 +35,12 @@ else
 fi
 
 # console vs. X
-if [ "${TERM}" = "linux" ]; then
+# if [ "${TERM}" = "linux" ]; then
     unset DISPLAY
     _EMACSCLIENTOPTS="-t"
-else
-    _EMACSCLIENTOPTS="-c"
-fi
+# else
+#     _EMACSCLIENTOPTS="-c"
+# fi
 
 # run emacsclient
 ${_EMACSCLIENT} ${_EMACSCLIENTOPTS} -a "" -e "(${_EVAL})" 2>&1
