@@ -13,7 +13,7 @@ import XMonad.Prompt.Shell
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
-myTerminal = "urxvtc"
+myTerminal = "urxvtc -e zsh"
 myModMask = mod4Mask
 
 myWorkspaces = with_greek ["Trivia","Web","Mail","Chat"]

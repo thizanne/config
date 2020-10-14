@@ -13,24 +13,11 @@ Config {
        , position = Top
        , lowerOnStart = True
        , commands =
-           [ Run Com "mpd_status.py" [] "mpd" 10
-           , Run Date "%a %d %b - %k:%M" "date" 600
-           , Run Com "mpd_status.py" [] "mpd" 10
+           [ Run Date "%a %d %b - %k:%M" "date" 600
+           , Run Com "ict.py" ["status", "--color", "xmobar"] "ict" 1
            , Run StdinReader
-           , Run BatteryP ["BAT0"]
-                 [ "--template", "<leftipat>"
-                 , "--Low", "30" -- units: %
-                 , "--low", "#dc322f"
-                 , "--" -- battery specific options
-                 -- discharging
-                 , "--off-icon-pattern", "<fc=#b58900><fn=3> 🔋 </fn><left>% (<timeleft>) </fc>"
-                 -- charging
-                 , "--on-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn><left>% (<timeleft>) </fc>"
-                 -- charged
-                 , "--idle-icon-pattern", "<fc=#859900><fn=1> ⚡ </fn></fc>"
-                 ] 30
            ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{<fc=#93a1a1><fn=1>♫</fn> %mpd%      </fc> %battery%       <fc=#93a1a1>%date%</fc>   "
+       , template = "%StdinReader% }{ %ict%   <fc=#93a1a1>%date%</fc>   "
        }
