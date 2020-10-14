@@ -1,3 +1,6 @@
+[core]
+     pager = less -S
+
 [color]
     diff = auto
     status = auto
@@ -13,9 +16,12 @@
     co = checkout
     ci = commit
     br = branch
+    smash = commit --amend --no-edit
+    graph = log --all --graph --oneline --decorate
 
 [core]
     excludesfile = ~/.gitignore.global
+    editor = ~/bin/emacsclient.sh
 
 [push]
     default = simple
@@ -34,3 +40,6 @@
 [mergetool "ediff"]
     cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
     trustExitCode = true
+
+[rebase]
+    autostash = true
