@@ -18,4 +18,4 @@ feh --bg-center ~/.xmonad/wallpaper.jpg &
 xset b off & # Do not beep/bell
 # xmodmap ~/.xmodmap &
 
-# exec xmonad
+exec xmonad
