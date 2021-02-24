@@ -26,7 +26,7 @@
  '(org-latex-pdf-process
    '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f"))
  '(package-selected-packages
-   '(auctex company org-ref erlang graphviz-dot-mode magit-gitflow markdown-mode+ proof-general term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode org-plus-contrib org mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme))
+   '(sml-mode auctex company org-ref erlang graphviz-dot-mode magit-gitflow markdown-mode+ proof-general term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode org-plus-contrib org mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
  '(proof-electric-terminator-enable t)
