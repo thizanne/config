@@ -34,8 +34,9 @@ shconf = defaultXPConfig {
            height      = 35
 }
 
-screenshot_command = "scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
-
+screenshot_cmd = "scrot '%d-%m-%Y_%H:%M:%S.png' -e 'mv $f ~/screenshots/'"
+screencopy_cmd = "sleep 0.2; scrot -s '/tmp/%F_%T_$wx$h.png' \
+                  \ -e 'xclip -selection clipboard -target image/png -i $f'"
 ssh_gnb_command = myTerminalExec ++ "sh -c 'ssh gnb -t zsh; zsh'"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
@@ -67,7 +68,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           ((modm              , xK_Up       ), spawn "mpc play"),
           ((modm              , xK_Down     ), spawn "mpc pause"),
           ((modm .|. shiftMask, xK_l        ), spawn "slock"),
-          ((modm              , xK_s        ), spawn screenshot_command)
+          ((modm              , xK_s        ), spawn screenshot_cmd),
+          ((modm .|. shiftMask, xK_s        ), spawn screencopy_cmd)
          ]
          ++
          [((m .|. modm, k), windows $ f i) |
