@@ -13,12 +13,17 @@
     co = checkout
     ci = commit
     br = branch
+    graph = log --all --decorate --oneline --graph
+    smash = commit --amend --no-edit
 
 [core]
     excludesfile = ~/.gitignore.global
 
 [push]
     default = simple
+
+[pull]
+    rebase = true
 
 [diff]
     tool = ediff
@@ -34,3 +39,6 @@
 [mergetool "ediff"]
     cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED $BASE
     trustExitCode = true
+
+[rebase]
+    autostash = true
