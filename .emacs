@@ -88,7 +88,7 @@
 (setq standard-indent 4)
 (setq set-mark-command-repeat-pop t)
 (setq vc-follow-symlinks t)
-(setq fill-column 85) ;; Makes lines < 90 chars even with fill prefix
+(setq fill-column 90) ;; Makes lines < 90 chars even with fill prefix
 
 (fset 'yes-or-no-p 'y-or-n-p)
 

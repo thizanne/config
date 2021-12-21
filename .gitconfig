@@ -1,5 +1,5 @@
 [core]
-     pager = less -S
+     # pager = less -S
 
 [color]
     diff = auto

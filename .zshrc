@@ -12,6 +12,7 @@ SAVEHIST=1000
 setopt hist_ignore_space
 setopt appendhistory
 
+export LESS=-XRS
 export WORDCHARS='' # Do not treat /a/path/with/slashes as a single word
 export GDK_USE_XFT=0
 export EDITOR='emacsclient.sh'
@@ -59,6 +60,9 @@ unsetopt hup
 # Expressions régulières dans les globs à la bash...
 # setopt extendedglob
 
+# If a * glob fails, remove it from the command. If all fail, the command fails.
+setopt cshnullglob
+
 # Prompt
 autoload -U promptinit
 promptinit
@@ -81,12 +85,12 @@ esac
 alias diff='diff --color=auto'
 alias dup='urxvtc &' # To spawn urxvt in the same dir
 
-alias ls='ls -FLh --literal'
+alias ls='ls --classify -Lh --literal'
 alias l='/bin/ls'
-alias l1='ls -F1'
-alias la='ls -FhA'
-alias ll='ls -Fhl'
-alias lla='ls -Fhla'
+alias l1='ls -1'
+alias la='ls -A'
+alias ll='ls -l'
+alias lla='ls -la'
 
 alias rm='rm --preserve-root'
 alias cd..='cd ..'
@@ -135,6 +139,7 @@ export P4MERGE=p4merge
 path+=/mathworks/GNB/devel/pst/utils/bin
 export SBTOOLS_VNC_WINDOW_MGR=xmonad
 . ~/mw_zsh_setup.zsh
+. /mathworks/GNB/devel/pst/utils/core/config.bash
 
 compdef sbmake=make
 # Polyspace variables
@@ -148,7 +153,7 @@ export latest_bslvnv=/mathworks/GNB/devel/jobarchive/Bslvnv/latest_pass/matlab/p
 export latest_bslvnv_btv=/mathworks/GNB/devel/jobarchive/Bslvnv/latest_pass/matlab/test/tools/polyspace/btv
 export sandbox=/mathworks/GNB/devel/sandbox
 export sbs=/mathworks/devel/sbs/11/
-export devsb=/local/mw/
+export devsb=/local/mw
 
 # MathWorks path
 # tools to print intermediate files
@@ -179,5 +184,7 @@ alias set_current_sb='export PATH=`sbroot`/matlab/polyspace/bin:`sbroot`/matlab/
 alias set_current_sb_btv='export PATH=`sbroot`/matlab/test/tools/polyspace/btv/:$PATH'
 alias set_dev_sb='export PATH=$devsb/matlab/polyspace/bin:$PATH'
 alias set_dev_sb_btv='export PATH=$devsb/matlab/test/tools/polyspace/btv:$PATH'
+alias set_dev='set_dev_sb;set_dev_sb_btv'
 alias core-sbs='/mathworks/GNB/devel/pst/utils/core/core-sbs'
 alias cdroot='cd `sbroot`'
+alias elog='emacs $(core-log)'

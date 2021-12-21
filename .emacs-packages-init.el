@@ -48,6 +48,10 @@
 ;; IL
 (require 'pst-files)
 (require 'il-mode)
+(require 'il-debug)
+
+(setq pst-print-il-locations t)
+;; (il-mode-hide-locations t)
 
 ;; suif
 (autoload 'suif-mode "suif-mode" "Major mode for editing SUIF code" t)

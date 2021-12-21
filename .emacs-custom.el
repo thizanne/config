@@ -12,6 +12,7 @@
  '(custom-safe-themes
    (quote
     ("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default)))
+ '(fill-column 90)
  '(frame-background-mode (quote dark))
  '(gdb-non-stop-setting nil t)
  '(git-commit-summary-max-length 100)
