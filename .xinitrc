@@ -1,6 +1,10 @@
 xrdb -load .Xresources
 xrdb -nocpp -merge .Xkeycodes
-urxvtd -q -o -f &
+
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets)
+# export SSH_AUTH_SOCK
+
+prime-run urxvtd -q -o -f &
 xbindkeys &
 setxkbmap -layout fr -option ctrl:swapcaps
 numlockx &
@@ -17,5 +21,11 @@ feh --bg-fill --randomize ~/.wallpaper/* &
 nm-applet &
 blueberry-tray &
 xmodmap ~/.xmodmap &
+
+firefox &
+chromium &
+thunderbird &
+prime-run urxvtc &
+prime-run urxvtc -e zsh -i -c irc &
 
 exec xmonad
