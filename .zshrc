@@ -16,6 +16,7 @@ export WORDCHARS='' # Do not treat /a/path/with/slashes as a single word
 export GDK_USE_XFT=0
 export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
+export LESS=-XRS # Display colors in less
 
 # Raccourcis clavier
 bindkey -e
@@ -88,12 +89,13 @@ alias la='ls -FhA'
 alias ll='ls -Fhl'
 alias lla='ls -Fhla'
 
+alias less='less -R' # Use color ANSI codes
 alias rm='rm --preserve-root'
 alias cd..='cd ..'
 alias df='df -h'
 alias du='du -h'
-alias s='sudo -E'
-alias ss='sudo -sE'
+alias s='sudo'
+alias ss='sudo -s'
 
 alias halt='systemctl poweroff'
 alias reboot='systemctl reboot'
@@ -102,11 +104,16 @@ alias caml='rlwrap ocaml -init /dev/null' # bare toplevel
 alias emacs='emacsclient.sh'
 alias emacsudo='EDITOR=emacsclient.sh visudo'
 alias ocaml='rlwrap ocaml'
+alias sml='rlwrap sml'
+alias smlnj='rlwrap smlnj'
+
 alias vba='VisualBoyAdvance'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
-alias sshg='ssh tsuzanne@gnb-tsuzanne-deb9-64.mathworks.com -t zsh'
+alias sshg='ssh gnb -t zsh'
+
+alias irc='ssh -4 thizanne@marteo.fr -t "TERM=xterm-256color screen -r -d; bash"'
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -126,3 +133,9 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 
 # Polyspace
 path+=/usr/local/Polyspace/R2019a/polyspace/bin
+
+PATH="/home/thibault/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/thibault/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/thibault/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/thibault/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/thibault/perl5"; export PERL_MM_OPT;
