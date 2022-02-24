@@ -111,7 +111,6 @@ alias vba='VisualBoyAdvance'
 
 alias ssht='ssh maxibolt@tonbnc.fr -D 8081'
 alias sshm='ssh premieremetz@tonbnc.fr'
-alias sshg='ssh gnb -t zsh'
 
 alias irc='ssh -4 thizanne@marteo.fr -t "TERM=xterm-256color screen -r -d; bash"'
 
@@ -130,9 +129,6 @@ source /etc/profile.d/autojump.sh
 
 # Antialiasing for swing applications
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
-
-# Polyspace
-path+=/usr/local/Polyspace/R2019a/polyspace/bin
 
 PATH="/home/thibault/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/thibault/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
