@@ -8,6 +8,7 @@
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(bibtex-align-at-equal-sign t)
+ '(company-idle-delay 0.3)
  '(custom-enabled-themes '(solarized))
  '(custom-safe-themes
    '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))
@@ -26,7 +27,7 @@
  '(org-latex-pdf-process
    '("latexmk -pdflatex='xelatex --shell-escape' -pdf -bibtex %f"))
  '(package-selected-packages
-   '(sml-mode auctex company org-ref erlang graphviz-dot-mode magit-gitflow markdown-mode+ proof-general term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode org-plus-contrib org mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme))
+   '(counsel flycheck lsp-ui lsp-treemacs lsp-ivy citeproc-org org-plus-contrib lsp-java lsp-mode org-ref yaml-mode sml-mode auctex company erlang graphviz-dot-mode magit-gitflow markdown-mode+ proof-general term-keys iedit php-mode nlinum anzu rainbow-delimiters rainbow-mode zlc sass-mode python-mode pkgbuild-mode mediawiki markdown-mode magit haskell-mode company-quickhelp company-coq company-auctex color-theme))
  '(proof-assistant-home-page "http://coq.inria.fr/")
  '(proof-context-command "Print All. ")
  '(proof-electric-terminator-enable t)

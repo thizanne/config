@@ -1,3 +1,6 @@
+;; lsp
+;; (require 'lsp-mode)
+
 ;; term-keys
 (require 'term-keys)
 (term-keys-mode t)
@@ -46,14 +49,19 @@
 
 ;; merlin
 
+(setq shell-file-name "/bin/sh")
+
 (require 'merlin)
+
+(require 'merlin-iedit)
+(require 'merlin-company)
 
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
 (add-hook 'caml-mode-hook 'merlin-mode t)
 (add-hook 'typerex-mode-hook 'merlin-mode t)
 
 ;;; Auto-completion
-(add-to-list 'company-backends 'merlin-company-backend)
+;; (add-to-list 'company-backends 'merlin-company-backend)
 (setq merlin-completion-with-doc t)
 
 (setq merlin-command 'opam)
@@ -70,6 +78,8 @@
 
 (setq ocp-server-command "/usr/bin/ocp-wizard")
 (setq ocp-theme "tuareg-like")
+
+;; (add-hook 'tuareg-mode-hook 'lsp-deferred)
 
 ;; utop
 
