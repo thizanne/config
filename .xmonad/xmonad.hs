@@ -13,8 +13,8 @@ import XMonad.Prompt.Shell
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
-myTerminal = "urxvtc"
-myTerminalExec = "urxvtc -e "
+myTerminal = "prime-run urxvtc"
+myTerminalExec = myTerminal ++ " -e "
 myModMask = mod4Mask
 
 myWorkspaces = with_greek ["Trivia","Web","Mail","Chat"]
@@ -69,7 +69,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) =
           ((modm              , xK_Down     ), spawn "mpc pause"),
           ((modm .|. shiftMask, xK_l        ), spawn "slock"),
           ((modm              , xK_s        ), spawn screenshot_cmd),
-          ((modm .|. shiftMask, xK_s        ), spawn screencopy_cmd)
+          ((modm .|. shiftMask, xK_s        ), spawn screencopy_cmd),
+          ((modm              , xK_x        ), spawn "xrandr --output DP-1-0 --off"),
+          ((modm .|. shiftMask, xK_x        ), spawn "xrandr --output eDP-1 --auto --output DP-1-0 --auto --right-of eDP-1")
          ]
          ++
          [((m .|. modm, k), windows $ f i) |
@@ -102,6 +104,8 @@ myManageHook = composeAll $
                [className =? c --> doFloat | c <- myFloats]
                ++
                [
+                -- $ xprop | grep WM_CLASS
+                className =? "Chromium"    --> doF (W.shift "δ"),
                 className =? "firefox"     --> doF (W.shift "Web"),
                 className =? "Thunderbird" --> doF (W.shift "Mail"),
                 className =? "Skype"       --> doF (W.shift "Chat")
