@@ -42,5 +42,6 @@
 
 [rebase]
     autostash = true
+
 [init]
-	defaultBranch = master
+    defaultBranch = master
