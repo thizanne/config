@@ -5,7 +5,7 @@
 
 [user]
     name = Thibault Suzanne
-    email = thi.suzanne@gmail.com
+    email = tsuzanne@fb.com
 
 [alias]
     st = status
@@ -45,3 +45,6 @@
 
 [init]
     defaultBranch = master
+
+[include]
+    path = ~/config/meta.gitconfig
