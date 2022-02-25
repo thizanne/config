@@ -4,3 +4,4 @@ latex/auto
 
 meta.gitconfig
 meta.zshrc
+.emacs-meta.el

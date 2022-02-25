@@ -8,7 +8,11 @@
  '(ansi-color-names-vector
    ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
  '(bibtex-align-at-equal-sign t)
+ '(company-backends
+   '(company-tasks company-reviewers company-bbdb company-nxml company-css company-capf
+                   (company-dabbrev-code company-keywords)))
  '(company-idle-delay 0.3)
+ '(company-minimum-prefix-length 1)
  '(custom-enabled-themes '(solarized))
  '(custom-safe-themes
    '("8db4b03b9ae654d4a57804286eb3e332725c84d7cdab38463cb6b97d5762ad26" default))

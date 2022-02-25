@@ -1,8 +1,8 @@
 (require 'org-install)
 (require 'ox-latex)
 (require 'ox-beamer)
-(require 'ox-bibtex)
-(require 'ox-extra)
+;; (require 'ox-bibtex)
+;; (require 'ox-extra)
 
 ;; Global conf
 
@@ -14,7 +14,7 @@
 
 ;; Allow :ignore: tag to ignore a heading at export but not its
 ;; contents
-(ox-extras-activate '(ignore-headlines))
+;; (ox-extras-activate '(ignore-headlines))
 
 ;; Babel
 
