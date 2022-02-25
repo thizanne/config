@@ -7,8 +7,8 @@ XDG_CONFIG_HOME=${HOME}/.config
 
 # Historique
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000000
+SAVEHIST=1000000
 setopt hist_ignore_space
 setopt appendhistory
 
@@ -26,6 +26,9 @@ autoload -Uz compinit
 compinit
 zstyle :compinstall filename '/home/thibault/.zshrc'
 zstyle ':completion::complete:*' use-cache 1
+
+# Allow tab completion in the middle of a word.
+setopt COMPLETE_IN_WORD
 
 # Schema de completion :
 # 1ere tabulation : complete jusqu'au bout de la partie commune et
