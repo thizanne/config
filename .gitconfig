@@ -15,6 +15,7 @@
     br = branch
     graph = log --all --decorate --oneline --graph
     smash = commit --amend --no-edit
+    wip = commit -am WIP
 
 [core]
     excludesfile = ~/.gitignore.global
