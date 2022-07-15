@@ -60,6 +60,8 @@
 (add-hook 'caml-mode-hook 'merlin-mode t)
 (add-hook 'typerex-mode-hook 'merlin-mode t)
 
+(add-hook 'merlin-mode-hook (lambda () (local-set-key (kbd "C-c l") 'merlin-locate-type)))
+
 ;;; Auto-completion
 ;; (add-to-list 'company-backends 'merlin-company-backend)
 (setq merlin-completion-with-doc t)
