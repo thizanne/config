@@ -12,7 +12,11 @@ SAVEHIST=1000000
 setopt hist_ignore_space
 setopt appendhistory
 
-export WORDCHARS='' # Do not treat /a/path/with/slashes as a single word
+# Word characters are alphanumeric characters only.
+# `Bash` in uppercase => subword matching in camelCase
+autoload -U select-word-style
+select-word-style Bash
+
 export GDK_USE_XFT=0
 export EDITOR='emacsclient.sh'
 export BROWSER='firefox'
