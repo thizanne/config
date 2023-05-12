@@ -72,6 +72,10 @@
 
 (setq nlinum-format "%d ")
 
+;; Distinguish camelCased words
+
+(global-subword-mode 1)
+
 ;; Use UTF-8
 
 (set-language-environment "UTF-8")
