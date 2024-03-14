@@ -13,7 +13,7 @@ HISTFILE=~/.histfile
 HISTSIZE=10000000
 SAVEHIST=1000000
 setopt hist_ignore_space
-setopt appendhistory
+setopt INC_APPEND_HISTORY_TIME
 
 # Word characters are alphanumeric characters only.
 # `Bash` in uppercase => subword matching in camelCase
