@@ -1,3 +1,9 @@
 .xmonad/*
 !.xmonad/xmonad.hs
 latex/auto
+
+# .config: explicitly list the unignored files
+.config
+!.config/burp/burp.conf
+!.config/fontconfig/fonts.conf
+!.config/mpd/mpd.conf
