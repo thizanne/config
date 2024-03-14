@@ -15,7 +15,10 @@
     br = branch
     graph = log --all --decorate --oneline --graph
     smash = commit --amend --no-edit
+    hash = show --no-patch --oneline --no-abbrev
+    tree = show-tree
     wip = commit -am WIP
+    unwip = reset HEAD^
 
 [core]
     excludesfile = ~/.gitignore.global
@@ -30,6 +33,7 @@
     tool = ediff
     guitool = ediff
     submodule = log
+        algorithm = patience
 
 [difftool "ediff"]
     cmd = ~/bin/ediff.sh $LOCAL $REMOTE $MERGED
