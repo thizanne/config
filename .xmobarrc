@@ -1,6 +1,6 @@
 Config {
        -- fallback to DejaVu for greek chars
-       font = "xft:inconsolata-15:antialias=true,xft:DejaVu Sans-13"
+       font = "xft:Inconsolata-27"
        -- additional fonts when explicitely needed
        -- fallback doesn't work for battery icons (displays a ▯)
        , additionalFonts =
@@ -10,7 +10,7 @@ Config {
        ]
        , bgColor = "#002b36"
        , fgColor = "#657b83"
-       , position = Top
+       , position = Static { xpos = 0, ypos = 0, width = 3840, height = 40 }
        , lowerOnStart = True
        , commands =
            [ Run Com "mpd_status.py" [] "mpd" 10
@@ -32,5 +32,5 @@ Config {
            ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{<fc=#93a1a1><fn=1>♫</fn> %mpd%      </fc> %battery%       <fc=#93a1a1>%date%</fc>   "
+       , template = "%StdinReader%                        <fc=#93a1a1><fn=1>♫</fn> %mpd% </fc> }{  %battery%       <fc=#93a1a1>%date%</fc>   "
        }
