@@ -1,4 +1,3 @@
-(require 'org-install)
 (require 'ox-latex)
 (require 'ox-beamer)
 (require 'ox-bibtex)
